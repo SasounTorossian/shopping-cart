@@ -44,10 +44,20 @@ html, body {
     height: 80%;
     display: flex;
     align-items: center;
-    justify-content: center;
     background: lightgoldenrodyellow;
 }
 
+.side-bar {
+    height: 100%;
+    flex-basis: 30%;
+    background: lightseagreen;
+}
+
+.product-list {
+    height: 100%;
+    width: 100%;
+    background: mediumpurple;
+}
 
 .Footer {
     height: 10%;
