@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #root {
@@ -91,24 +91,17 @@ body {
     transition: 0.2s ease-out;
 }
 
-.git-link {
-    font-size: 27px;
+.git-link, .fb-link, .email-link {
     padding: 0;
 }
 
 /* Home Page */
 .HomePage {
-    margin-top: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.page-parent {
-    height: 100%;
-    width: 100%;
 }
 
 .page {
@@ -152,9 +145,45 @@ body {
     background: mediumpurple;
 }
 
+/* FOOTER */
 .Footer {
-    height: 200px;
-    background: blue;
+    height: 300px;
+    width: 100%;
     scroll-snap-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    color: white;
 }
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us form{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-link {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
 

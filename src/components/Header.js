@@ -24,7 +24,7 @@ const Header = () => {
                     </div>
                 </Link>
                 <Link to="">
-                    <FontAwesomeIcon icon={faGithub} className="nav-link git-link"/>
+                    <FontAwesomeIcon icon={faGithub} size="2x" className="nav-link git-link"/>
                 </Link>
             </nav>
         </div>
