@@ -17,19 +17,33 @@ const Footer = () => {
 const ContactUs = () => {
     return (
         <div className="contact-us">
-            <h2>Contact Us</h2>
+            <h1 className="footer-section-title">Contact Us</h1>
             <form>
-                <label for="name">Name</label>
-                <input id="name" type="text"></input>
+                <div className="first-row">
+                    <div className="form-name form-component">
+                        <label for="name">Name</label>
+                        <input id="name" type="text"></input>
+                    </div>
+                    <div className="form-phone form-component">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="text"></input>
+                    </div>
+                </div>
+                <div className="second-row">
+                    <div className="form-email form-component">
+                        <label for="email">Email</label>
+                        <input id="email" type="email"></input>
+                    </div>
+                </div>
+                <div className="third-row">
+                    <div className="form-comment form-component">
+                        <label for="comment">Comment</label>
+                        <textarea id="comment" type="text" rows="5"></textarea>
+                    </div>
+                </div>
 
-                <label for="email">Email</label>
-                <input id="email" type="email"></input>
 
-                <label for="phone">Phone</label>
-                <input id="phone" type="text"></input>
 
-                <labal for="box">Please type here</labal>
-                <textarea id="box" type="text"></textarea>
             </form>
         </div>
     )
@@ -38,18 +52,15 @@ const ContactUs = () => {
 const Sitemap = () => {
     return (
         <div className="sitemap">
-            <h2>Sitemap</h2>
+            <h1 className="footer-section-title">Sitemap</h1>
             <Link to="/" className="footer-link">
-                <h4>Home</h4>
+                <h3>Home</h3>
             </Link>
             <Link to="/shoppingpage" className="footer-link">
-                <h4>Shopping</h4>
+                <h3>Shopping</h3>
             </Link>
-            <Link to="" className="footer-link">
-                <h4>Search</h4>   
-            </Link>
-            <Link to="" className="footer-link">
-                <h4>Basket</h4>   
+            <Link to="/basket" className="footer-link">
+                <h3>Basket</h3>   
             </Link>
         </div>
     )
@@ -58,19 +69,15 @@ const Sitemap = () => {
 const Details = () => {
     return (
         <div className="details">
-            <h2>The Collection</h2>
-            <Link to="" className="detail-link git-link">
+            <h1 className="footer-section-title">The Collection</h1>
+            <a href="https://github.com/SasounTorossian" target="_blank" className="detail-link git-link">
                 <FontAwesomeIcon icon={faGithub} size ="2x"/>
                 <h3>Git</h3>
-            </Link>
-            <Link to="" className="detail-link fb-link">
-                <FontAwesomeIcon icon={faFacebook} size ="2x" />
-                <h3>Facebook</h3>
-            </Link>
-            <Link to="" className="detail-link email-link">
+            </a>
+            <a href="mailto:sasountorossian@gmail.com" target="_blank" className="detail-link email-link">
                 <FontAwesomeIcon icon={faAt} size ="2x"/>
-                <h3>Email</h3>
-            </Link>
+                <h3>sasountorossian@gmail.com</h3>
+            </a>
         </div>
     )
 }
