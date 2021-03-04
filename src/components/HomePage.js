@@ -9,7 +9,9 @@ const HomePage = () => {
         <div className="HomePage">
             <section className="page FirstPage">
                 <div className="text-container">
-                    <h2>The Red Collection</h2>
+                    <div className="header-container">
+                        <p> The <span>Red</span> Collection </p>
+                    </div>
                     <p>
                         This collection compiles the twisted creations of modern
                         man into a cacophany of steel, iron, rust, and wire, which 
@@ -32,7 +34,9 @@ const HomePage = () => {
             </section>
             <section className="page SecondPage">
                 <div className="text-container">
-                    <h2>The Black & White Collection</h2>
+                    <div className="header-container">
+                        <p> The <span>Grey</span> Collection </p>
+                    </div>  
                     <p>
                         This group of object highlights the sublime intersection 
                         of ink on paper, capturing the symbols and images that 
@@ -46,16 +50,18 @@ const HomePage = () => {
                     </p>
                     <p>
                         Regardless of where they originated from, these drawings 
-                        can be found here, in the Black & White Collection.
+                        can be found here, in the Grey Collection.
                     </p>
-                    <Link to="/shoppingpage/bandw" className="home-link">
-                        <h3>Black and White Collection</h3>
+                    <Link to="/shoppingpage/grey" className="home-link">
+                        <h3>Grey Collection</h3>
                     </Link>
                 </div>
             </section>
             <section className="page ThirdPage">
                 <div className="text-container">
-                    <h2>The Brown Collection</h2>
+                    <div className="header-container">
+                        <p> The <span>Gold</span> Collection </p>
+                    </div>  
                     <p>
                         Combining natural materials and seemingly random objects, 
                         this collection looks to reintroduce the artistc beauty 
@@ -70,10 +76,10 @@ const HomePage = () => {
                         Due to the organic nature of these items, The Collection 
                         and all associated brands do not hold any legal liability for 
                         peices of art which are altered, damaged, or destroyed due to 
-                        natural causes. Enter the Brown Collection.
+                        natural causes. Enter the Gold Collection.
                     </p>
-                    <Link to="/shoppingpage/brown" className="home-link">
-                        <h3>Brown Collection</h3>
+                    <Link to="/shoppingpage/gold" className="home-link">
+                        <h3>Gold Collection</h3>
                     </Link>
                 </div>
             </section>
