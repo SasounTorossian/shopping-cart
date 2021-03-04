@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { useParams, Link } from 'react-router-dom'
 
 const items = {
-    mammals: [
+    red: [
         {
             name: "cat", 
             desc: "Meow meow",
@@ -13,14 +14,14 @@ const items = {
             price: 30    
         },
     ],
-    invertabrates: [
+    bandw: [
         {
             name: "beetle", 
             desc: "Scuttle scuttle",
             price: 50    
         }
     ],
-    birds: [
+    brown: [
         {
             name: "duck", 
             desc: "Quack quack",
@@ -30,16 +31,12 @@ const items = {
 }
 
 const ShoppingPage = () => {
-    const [productRange, setProductRange] = useState("mammals")
-
-    const handleChange = (type) => {
-        setProductRange(type)
-    }
+    const { collection } = useParams()
 
     return (
         <div className="ShoppingPage">
-            <SideBar handleChange={handleChange}/>
-            <ProductList productRange={productRange}/>
+            <SideBar/>
+            <ProductList collection={collection}/>
         </div>
     )
 }
@@ -47,17 +44,23 @@ const ShoppingPage = () => {
 const SideBar = ({ handleChange }) => {
     return (
         <nav className="side-bar">
-            <div onClick={() => handleChange("mammals")}>Mammals</div>
-            <div onClick={() => handleChange("birds")}>Birds</div>
-            <div onClick={() => handleChange("invertabrates")}>Invertabrates</div>
+            <Link to="/shoppingpage/red">
+                <h3 className="nav-link">Red Collection</h3>
+            </Link>
+            <Link to="/shoppingpage/bandw">
+                <h3 className="nav-link">Black & White Collection</h3>
+            </Link>
+            <Link to="/shoppingpage/brown">
+                <h3 className="nav-link">Brown Collection</h3>
+            </Link>
         </nav>
     )
 }
 
-const ProductList = ({ productRange }) => {
+const ProductList = ({ collection }) => {
     return (
         <div className="product-list">
-            {items[productRange].map((item, idx) => {
+            {items[collection].map((item, idx) => {
                 return (
                     <div className="item" key={idx}>
                         <div className="item-name">{item.name}</div>

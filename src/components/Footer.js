@@ -21,23 +21,23 @@ const ContactUs = () => {
             <form>
                 <div className="first-row">
                     <div className="form-name form-component">
-                        <label for="name">Name</label>
+                        <label htmlFor="name">Name</label>
                         <input id="name" type="text"></input>
                     </div>
                     <div className="form-phone form-component">
-                        <label for="phone">Phone</label>
+                        <label htmlFor="phone">Phone</label>
                         <input id="phone" type="text"></input>
                     </div>
                 </div>
                 <div className="second-row">
                     <div className="form-email form-component">
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input id="email" type="email"></input>
                     </div>
                 </div>
                 <div className="third-row">
                     <div className="form-comment form-component">
-                        <label for="comment">Comment</label>
+                        <label htmlFor="comment">Comment</label>
                         <textarea id="comment" type="text" rows="5"></textarea>
                     </div>
                 </div>

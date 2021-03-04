@@ -25,6 +25,9 @@ const HomePage = () => {
                         To experience the beauty of cold steel and sharp edges
                         (careful not to cut yourself buddy), enter the Red Collection below.
                     </p>
+                    <Link to="/shoppingpage/red" className="home-link">
+                        <h3>Red Collection</h3>
+                    </Link>
                 </div>
             </section>
             <section className="page SecondPage">
@@ -38,13 +41,16 @@ const HomePage = () => {
                     <p>
                         The origins of these drawings are varied, with one of them
                         being found hidden in the toilet tank of the famous 20th 
-                        centuryavent-garde writer James Joyce, while another is 
+                        century avant-garde writer James Joyce, while another is 
                         thought to have been drawn by Hulk Hogan of WWE fame.
                     </p>
                     <p>
                         Regardless of where they originated from, these drawings 
                         can be found here, in the Black & White Collection.
                     </p>
+                    <Link to="/shoppingpage/bandw" className="home-link">
+                        <h3>Black and White Collection</h3>
+                    </Link>
                 </div>
             </section>
             <section className="page ThirdPage">
@@ -66,6 +72,9 @@ const HomePage = () => {
                         peices of art which are altered, damaged, or destroyed due to 
                         natural causes. Enter the Brown Collection.
                     </p>
+                    <Link to="/shoppingpage/brown" className="home-link">
+                        <h3>Brown Collection</h3>
+                    </Link>
                 </div>
             </section>
             <Footer />
