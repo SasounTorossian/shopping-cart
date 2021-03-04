@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 const items = {
@@ -35,23 +35,40 @@ const ShoppingPage = () => {
 
     return (
         <div className="ShoppingPage">
-            <SideBar/>
+            <SideBar collection={collection}/>
             <ProductList collection={collection}/>
         </div>
     )
 }
 
-const SideBar = ({ handleChange }) => {
+const SideBar = ({ collection }) => {
+    const [colourScheme, setColourSheme] = useState(collection)
+
+    useEffect(() => {
+        setColourSheme(collection)
+    }, [collection])
+
+    const backgroundFromScheme = () => {
+        if(colourScheme === "red") return "rgba(168, 14, 14, 0.75)"
+        else if(colourScheme === "bandw") return "rgba(97, 92, 92, 0.75)"
+        else if(colourScheme === "brown") return "rgba(199, 139, 11, 0.75)"
+    }
+
+    const handleMouseOver = (colour) => {
+        setColourSheme(colour)
+    }
+
     return (
-        <nav className="side-bar">
-            <Link to="/shoppingpage/red">
-                <h3 className="nav-link">Red Collection</h3>
+        <nav className="side-bar" style={{ background: backgroundFromScheme() }}>
+            <h3>Collections</h3>
+            <Link to="/shoppingpage/red" className="side-link side-red">
+                <p className="side-text text-red" onMouseOver={() => handleMouseOver("red")}>Red Collection</p>
             </Link>
-            <Link to="/shoppingpage/bandw">
-                <h3 className="nav-link">Black & White Collection</h3>
+            <Link to="/shoppingpage/bandw" className="side-link side-bandw">
+                <p className="side-text text-bandw" onMouseOver={() => handleMouseOver("bandw")}>Black & White Collection</p>
             </Link>
-            <Link to="/shoppingpage/brown">
-                <h3 className="nav-link">Brown Collection</h3>
+            <Link to="/shoppingpage/brown" className="side-link side-brown">
+                <p className="side-text text-brown" onMouseOver={() => handleMouseOver("brown")}>Brown Collection</p>
             </Link>
         </nav>
     )

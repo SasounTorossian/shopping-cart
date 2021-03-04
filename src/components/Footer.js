@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
@@ -70,11 +70,21 @@ const Details = () => {
     return (
         <div className="details">
             <h1 className="footer-section-title">The Collection</h1>
-            <a href="https://github.com/SasounTorossian" target="_blank" className="detail-link git-link">
+            <a 
+                href="https://github.com/SasounTorossian" 
+                target="_blank" 
+                rel="noreferrer"
+                className="detail-link git-link"
+            >
                 <FontAwesomeIcon icon={faGithub} size ="2x"/>
                 <h3>Git</h3>
             </a>
-            <a href="mailto:sasountorossian@gmail.com" target="_blank" className="detail-link email-link">
+            <a 
+                href="mailto:sasountorossian@gmail.com" 
+                target="_blank" 
+                className="detail-link email-link"
+                rel="noreferrer"
+            >
                 <FontAwesomeIcon icon={faAt} size ="2x"/>
                 <h3>sasountorossian@gmail.com</h3>
             </a>
