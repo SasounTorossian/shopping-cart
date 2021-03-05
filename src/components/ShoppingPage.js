@@ -4,14 +4,34 @@ import { useParams, Link } from 'react-router-dom'
 const items = {
     red: [
         {
+            id: 1,
             name: "cat", 
             desc: "Meow meow",
             price: 20    
         },
         {
+            id: 2,
             name: "cow", 
             desc: "Moo moo",
             price: 30    
+        },
+        {
+            id: 3,
+            name: "dog", 
+            desc: "bark bark",
+            price: 40    
+        },
+        {
+            id: 4,
+            name: "flamingo", 
+            desc: "? ?",
+            price: 40    
+        },
+        {
+            id: 5,
+            name: "whale", 
+            desc: "AAAAAAAAAA",
+            price: 40    
         },
     ],
     grey: [
