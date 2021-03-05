@@ -65,33 +65,35 @@ const SideBar = ({ collection }) => {
     return (
         <nav className="side-bar" style={{ background: backgroundFromScheme() }}>
             <h3>Collections</h3>
-            <Link to="/shoppingpage/red" className="side-link side-red">
-                <p 
-                    className="side-text text-red" 
-                    onMouseOver={() => handleMouseOver("red")}
-                    onMouseLeave={() => handleMouseLeave()}
-                >
-                    Red Collection
-                </p>
-            </Link>
-            <Link to="/shoppingpage/grey" className="side-link side-grey">
-                <p 
-                    className="side-text text-grey" 
-                    onMouseOver={() => handleMouseOver("grey")}
-                    onMouseLeave={() => handleMouseLeave()}
-                >
-                        Grey Collection
-                </p>
-            </Link>
-            <Link to="/shoppingpage/gold" className="side-link side-gold">
-                <p 
-                    className="side-text text-gold" 
-                    onMouseOver={() => handleMouseOver("gold")}
-                    onMouseLeave={() => handleMouseLeave()}
-                >
-                        Gold Collection
-                </p>
-            </Link>
+            <div className="side-link-container">
+                <Link to="/shoppingpage/red" className="side-link side-red">
+                    <p 
+                        className="side-text text-red" 
+                        onMouseOver={() => handleMouseOver("red")}
+                        onMouseLeave={() => handleMouseLeave()}
+                    >
+                        Red Collection
+                    </p>
+                </Link>
+                <Link to="/shoppingpage/grey" className="side-link side-grey">
+                    <p 
+                        className="side-text text-grey" 
+                        onMouseOver={() => handleMouseOver("grey")}
+                        onMouseLeave={() => handleMouseLeave()}
+                    >
+                            Grey Collection
+                    </p>
+                </Link>
+                <Link to="/shoppingpage/gold" className="side-link side-gold">
+                    <p 
+                        className="side-text text-gold" 
+                        onMouseOver={() => handleMouseOver("gold")}
+                        onMouseLeave={() => handleMouseLeave()}
+                    >
+                            Gold Collection
+                    </p>
+                </Link>
+            </div>
         </nav>
     )
 }
