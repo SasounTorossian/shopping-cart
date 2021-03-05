@@ -28,7 +28,7 @@ const HomePage = () => {
                         (careful not to cut yourself buddy), enter the Red Collection below.
                     </p>
                     <Link to="/shoppingpage/red" className="home-link">
-                        <h3>Red Collection</h3>
+                        <h3>Shop The Red Collection</h3>
                     </Link>
                 </div>
             </section>
@@ -53,7 +53,7 @@ const HomePage = () => {
                         can be found here, in the Grey Collection.
                     </p>
                     <Link to="/shoppingpage/grey" className="home-link">
-                        <h3>Grey Collection</h3>
+                        <h3>Shop The Grey Collection</h3>
                     </Link>
                 </div>
             </section>
@@ -79,7 +79,7 @@ const HomePage = () => {
                         natural causes. Enter the Gold Collection.
                     </p>
                     <Link to="/shoppingpage/gold" className="home-link">
-                        <h3>Gold Collection</h3>
+                        <h3>Shop The Gold Collection</h3>
                     </Link>
                 </div>
             </section>

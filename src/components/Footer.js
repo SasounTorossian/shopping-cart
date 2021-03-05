@@ -41,9 +41,9 @@ const ContactUs = () => {
                         <textarea id="comment" type="text" rows="5"></textarea>
                     </div>
                 </div>
-
-
-
+                <div className="fourth-row">
+                    <input type="submit" value="Submit"></input>
+                </div>
             </form>
         </div>
     )

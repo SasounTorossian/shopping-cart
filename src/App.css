@@ -32,7 +32,7 @@ body {
     width: 100%;
     position: fixed;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color: white;
     background: #000;
     z-index: 1;
@@ -41,6 +41,7 @@ body {
 .nav-title {
     font-family: 'Times New Roman', Times, serif;
     margin: 20px 0;
+    padding-left: 3%;
     flex-basis: 40%;
     font-size: 50px;
 }
@@ -49,6 +50,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding-right: 3%;
 }
 
 .nav-bar a {
@@ -137,15 +139,19 @@ body {
 .page .text-container .home-link {
     margin-top: 10px;
     text-align: center;
-    background: black;
     text-decoration: none;
     color: white;
+    transition: 0.15s ease-out;
 }
 
 .page .text-container .home-link h3{
     margin: 20px 0;
     padding: 15px;
-    background: rgba(168, 14, 14, 0.95);
+    transition: 0.15s ease-out;
+}
+
+.page .text-container .home-link h3:hover{
+    transform: scale(1.05);
 }
 
 .FirstPage {
@@ -165,24 +171,9 @@ body {
     transition: 0.15s ease-out;
 }
 
-/* ======================== HOVER EFFECT TEST ============================== */
-/* .FirstPage .text-container:hover {
-    background: rgba(168, 14, 14, 0.8);
-    color: black;
-}
-
-.FirstPage .text-container:hover > .header-container span{
-    color: black;
-}
-
-.FirstPage .text-container:hover > .home-link h3 {
-    background: black;
-    color: rgba(168, 14, 14, 0.8);
-}
-
 .FirstPage .text-container .home-link h3{
-    background: rgba(168, 14, 14, 0.95);
-} */
+    background:rgba(168, 14, 14, 0.95);
+}
 
 .SecondPage {
     background: url("./images/wallart.jpg") no-repeat center center/cover;
@@ -290,7 +281,7 @@ body {
 
 /* FOOTER */
 .Footer {
-    height: 380px;
+    height: 400px;
     width: 100%;
     scroll-snap-align: center;
     display: flex;
@@ -352,6 +343,14 @@ body {
     margin-bottom: 10px;
 }
 
+.contact-us form .fourth-row {
+    margin: 10px 0;
+}
+
+.contact-us form .fourth-row input{
+    padding: 4px;
+}
+
 .sitemap {
     display: flex;
     flex-direction: column;
@@ -372,6 +371,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.details h1{
+    font-size: 37px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .detail-link {
