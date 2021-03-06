@@ -5,9 +5,9 @@ import image_2 from "../images/2.jpg"
 import image_3 from "../images/3.jpg" 
 import image_4 from "../images/4.jpg" 
 import image_5 from "../images/5.jpg" 
-import rust from "../images/rust3.jpg" 
-import wallart from "../images/wallart.jpg" 
-import gold from "../images/gold_back.jpg" 
+import rust from "../images/rust.jpg" 
+import wallart from "../images/art.jpg" 
+import gold from "../images/gold.jpg" 
 
 const items = {
     red: [
