@@ -269,17 +269,17 @@ body {
 }
 
 .side-bar .side-link .text-red:hover{
-    background-color:rgba(168, 14, 14, 1);
+    background-color:rgba(168, 14, 14, 0.75);
     transform: scale(1.05);
 }   
 
 .side-bar .side-link .text-grey:hover{
-    background-color:rgba(129, 123, 123, 1);
+    background-color:rgba(129, 123, 123, 0.75);
     transform: scale(1.05);
 }   
 
 .side-bar .side-link .text-gold:hover{
-    background-color:rgba(199, 139, 11, 1);
+    background-color:rgba(199, 139, 11, 0.75);
     transform: scale(1.05);
 }   
 
