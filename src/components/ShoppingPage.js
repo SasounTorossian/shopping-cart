@@ -165,7 +165,9 @@ const ProductList = ({ collection }) => {
                 return (
                     <div className="item" key={idx}>
                         <div className="item-padding-container">
-                            <img className="item-image" src={item.image}></img>
+                            <div className="item-image-container">
+                                <img className="item-image" src={item.image}></img>
+                            </div>
                             <div className="item-name">{item.name}</div>
                             {/* <div className="item-descShort">{item.descShort}</div> */}
                         </div>
