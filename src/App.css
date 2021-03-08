@@ -296,26 +296,38 @@ body {
 .product-list .item {
     width: 50%;
     height: 50%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.product-list .item .item-name{
+    padding: 20px 0 ;
 }
 
 .product-list .item .item-padding-container{
-    padding: 30px;
+    margin: 30px;
+    padding-top: 20px;
     background: #eee;
+    transition: 0.5s ease-out;
+}
+
+.product-list .item .item-padding-container:hover{
+    background: #ddd;
 }
 
 .product-list .item img {
-    width: 330px;
+    width: 60%;
     height: auto;
+    transition: 0.5s ease-out;
+}
+
+.product-list .item .item-padding-container:hover img{
+    transform: scale(1.1);
 }
 
 .product-list .item .item-name {
     font-size: 25px;
 }
-
-.product-list .item .item-descShort {
-    font-size: 20px;
-}
-
 
 /* FOOTER */
 .Footer {
