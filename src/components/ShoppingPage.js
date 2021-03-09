@@ -164,14 +164,14 @@ const ProductList = ({ collection }) => {
             {items[collection].map((item, idx) => {
                 return (
                     <div className="item" key={idx}>
-                        <div className="item-padding-container">
-                            <div className="item-image-container">
-                                <img className="item-image" src={item.image}></img>
+                        <Link to={`/shoppingpage/${collection}/${item.id}`}>
+                            <div className="item-padding-container">
+                                <div className="item-image-container">
+                                    <img className="item-image" src={item.image}></img>
+                                </div>
+                                <div className="item-name">{item.name}</div>
                             </div>
-                            <div className="item-name">{item.name}</div>
-                            {/* <div className="item-descShort">{item.descShort}</div> */}
-                        </div>
-                        {/* <div className="item-price">{item.price}</div> */}
+                        </Link>
                     </div>
                 )
             })}

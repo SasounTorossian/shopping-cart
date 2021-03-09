@@ -286,7 +286,7 @@ body {
 .product-list {
     height: 100%;
     width: 100%;
-    background: #ddd;
+    background: #eee;
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;
@@ -299,7 +299,6 @@ body {
 .product-list .item {
     width: 50%;
     height: 50%;
-    padding: 10px 0;
     text-align: center;
 }
 
@@ -335,6 +334,11 @@ body {
 
 .product-list .item .item-name {
     font-size: 25px;
+}
+
+/* ITEM PAGE */
+.ItemPage {
+    margin-top: 100px;
 }
 
 /* FOOTER */
