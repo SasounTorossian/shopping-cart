@@ -11,16 +11,12 @@ function App() {
   const location = useLocation()
 
   return (
-    <div 
-      className="App" 
-      style={{ overflowY: location.pathname === "/" ? 
-              "scroll" : "hidden"}}
-    >
+    <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shoppingpage/:collection" component={ShoppingPage} />
-          <Route exact path="/shoppingpage/:collection/:item" component={ItemPage} />
+          <Route exact path="/shoppingpage/:collection/:id" component={ItemPage} />
         </Switch>
     </div>
   );
