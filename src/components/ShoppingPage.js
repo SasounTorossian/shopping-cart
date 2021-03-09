@@ -7,28 +7,8 @@ import inventory from "./inventory"
 
 
 const ShoppingPage = () => {
-    const { collection } = useParams()
-    // const [colourScheme, setColourSheme] = useState(collection)
-
-    // useEffect(() => {
-    //     setColourSheme(collection)
-    // }, [collection])
-
-    // const backgroundImageFromScheme = () => {
-    //     if(colourScheme === "red") return `url(${rust})`
-    //     else if(colourScheme === "grey") return `url(${wallart})`
-    //     else if(colourScheme === "gold") return `url(${gold})`
-    // }
-
-    // const handleMouseOverPage = (colour) => {
-    //     setColourSheme(colour)
-    // }
-
-    // const handleMouseLeavePage = () => {
-    //     setColourSheme(collection)
-    // }
-        
-
+    const { collection } = useParams()    
+    
     return (
         <div className="ShoppingPage">
             <SideBar collection={collection} />
@@ -39,10 +19,16 @@ const ShoppingPage = () => {
 
 const SideBar = ({ collection }) => {
 
-    const backgroundImageFromCollection = () => {
-        if(collection === "red") return `url(${rust})`
-        else if(collection === "grey") return `url(${wallart})`
-        else if(collection === "gold") return `url(${gold})`
+    // const backgroundImageFromCollection = () => {
+    //     if(collection === "red") return `url(${rust})`
+    //     else if(collection === "grey") return `url(${wallart})`
+    //     else if(collection === "gold") return `url(${gold})`
+    // }
+
+    const backgroundFromCollection = () => {
+        if(collection === "red") return "rgba(168, 14, 14, 0.75)"
+        else if(collection === "grey") return "rgba(129, 123, 123, 0.75)" 
+        else if(collection === "gold") return "rgba(199, 139, 11, 0.75)" 
     }
 
     const ifRed = () => { if(collection === "red") return "rgba(168, 14, 14, 1)" }
@@ -52,14 +38,11 @@ const SideBar = ({ collection }) => {
     const ifGold = () => { if(collection === "gold") return "rgba(199, 139, 11, 1)" }
 
     return (
-        <nav className="side-bar" style={{ backgroundImage: backgroundImageFromCollection() }}>
-            <h3>Collections</h3>
+        <nav className="side-bar" style={{ background: backgroundFromCollection() }}>
             <div className="side-link-container">
                 <Link to="/shoppingpage/red" className="side-link side-red">
                     <p 
                         className="side-text text-red" 
-                        // onMouseOver={() => handleMouseOver("red")}
-                        // onMouseLeave={() => handleMouseLeave()}
                         style={{ background: ifRed() }}
                     >
                         Red Collection
@@ -68,8 +51,6 @@ const SideBar = ({ collection }) => {
                 <Link to="/shoppingpage/grey" className="side-link side-grey">
                     <p 
                         className="side-text text-grey" 
-                        // onMouseOver={() => handleMouseOver("grey")}
-                        // onMouseLeave={() => handleMouseLeave()}
                         style={{ background: ifGrey() }}
                     >
                             Grey Collection
@@ -78,8 +59,6 @@ const SideBar = ({ collection }) => {
                 <Link to="/shoppingpage/gold" className="side-link side-gold">
                     <p 
                         className="side-text text-gold" 
-                        // onMouseOver={() => handleMouseOver("gold")}
-                        // onMouseLeave={() => handleMouseLeave()}d
                         style={{ background: ifGold() }}
                     >
                             Gold Collection
