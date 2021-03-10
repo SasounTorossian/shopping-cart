@@ -98,6 +98,10 @@ body {
     transition: 0.2s ease-out;
 }
 
+.basket-empty {
+    opacity: 0;
+}
+
 .git-link, .fb-link, .email-link {
     padding: 0;
 }
@@ -440,15 +444,15 @@ body {
     cursor: pointer;
 }
 
-.red-buy-button:hover {
+.buy-bar-button-red:hover {
     background: var(--colour-red);
 }
 
-.grey-buy-button:hover {
+.buy-bar-button-grey:hover {
     background: var(--colour-grey);
 }
 
-.gold-buy-button:hover {
+.buy-bar-button-gold:hover {
     background: var(--colour-gold);
 }
 

@@ -17,8 +17,6 @@ const ItemPage = (props) => {
 }
 
 const ProductDisplay = ({ item }) => {
-    console.log(item);
-
     return (
         <div className="product-display-container">
             <img className="product-display-image" src={item.image}></img>
@@ -28,11 +26,9 @@ const ProductDisplay = ({ item }) => {
 
 const BuyBar = ({ item, collection }) => {
 
-    const addClassFromCollection = () => {
-        if(collection === "red") return "red-buy-button"
-        else if(collection === "grey") return "grey-buy-button"
-        else if(collection === "gold") return "gold-buy-button"
-    }
+    //TODO:  Use `${collection}-buy-button`
+
+    const addClassFromCollection = () => { return `buy-bar-button-${collection}` }
 
     return (
         <div className="buy-bar-container">

@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import rust from "../images/rust.jpg" 
-import wallart from "../images/art.jpg" 
-import gold from "../images/gold.jpg" 
 import inventory from "./inventory"
 
 
@@ -18,11 +15,7 @@ const ShoppingPage = () => {
 }
 
 const SideBar = ({ collection }) => {
-    const backgroundFromCollection = () => {
-        if(collection === "red") return "side-bar-red-active"
-        else if(collection === "grey") return "side-bar-grey-active" 
-        else if(collection === "gold") return "side-bar-gold-active"
-    }
+    const backgroundFromCollection = () => { return `side-bar-${collection}-active`}
 
     const ifRedCollection = () => { if(collection === "red") return "side-bar-link-red-active" }
 

@@ -3,7 +3,12 @@ import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-const Header = () => {
+const Header = ({ basket }) => {
+    console.log(basket);
+    const basketSize = basket.length
+
+    const isCartEmpty = () => { if (basketSize === 0) return "basket-empty"}
+
     return (
         <div className="Header">
             <h1 className="nav-title">The Collection</h1>
@@ -20,7 +25,7 @@ const Header = () => {
                 <Link to="">
                     <div className="basket-container">
                         <h3 className="nav-link">Basket</h3>   
-                        <div className="basket-number">2</div>
+                        <div className={`basket-number ${isCartEmpty()}`}>{basketSize}</div>
                     </div>
                 </Link>
                 <Link to="">
