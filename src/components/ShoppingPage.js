@@ -8,7 +8,7 @@ import inventory from "./inventory"
 
 const ShoppingPage = () => {
     const { collection } = useParams()    
-    
+
     return (
         <div className="ShoppingPage">
             <SideBar collection={collection} />
@@ -18,51 +18,29 @@ const ShoppingPage = () => {
 }
 
 const SideBar = ({ collection }) => {
-
-    // const backgroundImageFromCollection = () => {
-    //     if(collection === "red") return `url(${rust})`
-    //     else if(collection === "grey") return `url(${wallart})`
-    //     else if(collection === "gold") return `url(${gold})`
-    // }
-
     const backgroundFromCollection = () => {
-        if(collection === "red") return "rgba(168, 14, 14, 0.75)"
-        else if(collection === "grey") return "rgba(129, 123, 123, 0.75)" 
-        else if(collection === "gold") return "rgba(199, 139, 11, 0.75)" 
+        if(collection === "red") return "side-bar-red-active"
+        else if(collection === "grey") return "side-bar-grey-active" 
+        else if(collection === "gold") return "side-bar-gold-active"
     }
 
-    const ifRed = () => { if(collection === "red") return "rgba(168, 14, 14, 1)" }
+    const ifRedCollection = () => { if(collection === "red") return "side-bar-link-red-active" }
 
-    const ifGrey = () => { if(collection === "grey") return "rgba(129, 123, 123, 1)" }
+    const ifGreyCollection = () => { if(collection === "grey") return "side-bar-link-grey-active" }
 
-    const ifGold = () => { if(collection === "gold") return "rgba(199, 139, 11, 1)" }
-
+    const ifGoldCollection = () => { if(collection === "gold") return "side-bar-link-gold-active" }
+    
     return (
-        <nav className="side-bar" style={{ background: backgroundFromCollection() }}>
-            <div className="side-link-container">
-                <Link to="/shoppingpage/red" className="side-link side-red">
-                    <p 
-                        className="side-text text-red" 
-                        style={{ background: ifRed() }}
-                    >
-                        Red Collection
-                    </p>
+        <nav className={`side-bar ${backgroundFromCollection()}`}>
+            <div className="side-bar-link-container">
+                <Link to="/shoppingpage/red" className={`side-bar-link ${ifRedCollection()}`}>
+                    <p className="side-bar-text side-bar-text-red">Red Collection</p>
                 </Link>
-                <Link to="/shoppingpage/grey" className="side-link side-grey">
-                    <p 
-                        className="side-text text-grey" 
-                        style={{ background: ifGrey() }}
-                    >
-                            Grey Collection
-                    </p>
+                <Link to="/shoppingpage/grey" className={`side-bar-link ${ifGreyCollection()}`}>
+                    <p className="side-bar-text side-bar-text-grey">Grey Collection</p>
                 </Link>
-                <Link to="/shoppingpage/gold" className="side-link side-gold">
-                    <p 
-                        className="side-text text-gold" 
-                        style={{ background: ifGold() }}
-                    >
-                            Gold Collection
-                    </p>
+                <Link to="/shoppingpage/gold" className={`side-bar-link ${ifGoldCollection()}`}>
+                    <p className="side-bar-text side-bar-text-gold">Gold Collection</p>
                 </Link>
             </div>
         </nav>

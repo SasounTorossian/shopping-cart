@@ -2,6 +2,9 @@
     font-family: -apple-system, 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
+    --colour-red: rgba(168, 14, 14, 1);
+    --colour-grey: rgba(129, 123, 123, 1);
+    --colour-gold: rgba(199, 139, 11, 1);
 }
 
 html, body {
@@ -160,7 +163,7 @@ body {
 }
 
 .FirstPage .text-container .header-container span{
-    color: rgba(168, 14, 14, 0.95);
+    color: var(--colour-red);
     transition: 0.15s ease-out;
 }
 
@@ -172,7 +175,7 @@ body {
 }
 
 .FirstPage .text-container .home-link h3{
-    background:rgba(168, 14, 14, 0.95);
+    background: var(--colour-red);
 }
 
 .SecondPage {
@@ -181,7 +184,7 @@ body {
 }
 
 .SecondPage .text-container .header-container span{
-    color: rgba(129, 123, 123, 0.95);
+    color: var(--colour-grey);
 }
 
 .SecondPage .text-container {
@@ -191,7 +194,7 @@ body {
 }
 
 .SecondPage .text-container .home-link h3{
-    background: rgba(129, 123, 123, 0.95);
+    background: var(--colour-grey);
 }
 
 .ThirdPage {
@@ -200,7 +203,7 @@ body {
 }
 
 .ThirdPage .text-container .header-container span{
-    color: rgba(199, 139, 11, 0.95)
+    color: var(--colour-gold);
 }
 
 .ThirdPage .text-container {
@@ -210,7 +213,7 @@ body {
 }
 
 .ThirdPage .text-container .home-link h3{
-    background: rgba(199, 139, 11, 0.95)
+    background: var(--colour-gold);
 }
 
 
@@ -237,6 +240,18 @@ body {
     position: relative;
 }
 
+.side-bar-red-active{
+    background-color: var(--colour-red);
+}
+
+.side-bar-grey-active {
+    background-color: var(--colour-grey);
+}
+
+.side-bar-gold-active {
+    background-color: var(--colour-gold);
+}
+
 .side-bar h3 {  
     width: 100%;
     margin-top: 30px;
@@ -247,39 +262,46 @@ body {
     text-align: center;
 }
 
-.side-bar .side-link-container {
+.side-bar .side-bar-link-container {
     height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.side-bar .side-link {
+.side-bar .side-bar-link {
     text-decoration: none;
     color: #eee;
 }
 
-.side-bar .side-link p{
+.side-bar .side-bar-link p{
     padding: 15px;
     font-size: 25px;
     font-weight: 600;
     transition: 0.3s ease-out;
-    background-color: #111;
+    background-color: black;
 }
 
-.side-bar .side-link .text-red:hover{
-    background-color:rgba(168, 14, 14, 0.75);
-    transform: scale(1.05);
+.side-bar .side-bar-link .side-bar-text:hover {
+    transform: scale(1.1);
+}
+
+.side-bar .side-bar-link-red-active p{
+    background-color: var(--colour-red);
+    transform: scale(1.1);
+    color: black;
 }   
 
-.side-bar .side-link .text-grey:hover{
-    background-color:rgba(129, 123, 123, 0.75);
-    transform: scale(1.05);
+.side-bar .side-bar-link-grey-active p{
+    background-color: var(--colour-grey);
+    transform: scale(1.1);
+    color: black;
 }   
 
-.side-bar .side-link .text-gold:hover{
-    background-color:rgba(199, 139, 11, 0.75);
-    transform: scale(1.05);
+.side-bar .side-bar-link-gold-active p{
+    background-color: var(--colour-gold);
+    transform: scale(1.1);
+    color: black;
 }   
 
 /*  SHOPPING PAGE PRODUCT LIST*/
@@ -419,15 +441,15 @@ body {
 }
 
 .red-buy-button:hover {
-    background:rgba(168, 14, 14, 0.95);
+    background: var(--colour-red);
 }
 
 .grey-buy-button:hover {
-    background: rgba(129, 123, 123, 0.95);
+    background: var(--colour-grey);
 }
 
 .gold-buy-button:hover {
-    background:rgba(199, 139, 11, 0.95);
+    background: var(--colour-gold);
 }
 
 /* FOOTER */
