@@ -434,14 +434,84 @@ body {
     margin-bottom: 20px;
 }
 
-.buy-bar-button {
+.buy-bar-button-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.buy-bar-incrementer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.buy-bar-incrementer-subtract,
+.buy-bar-incrementer-add {
+    box-sizing: border-box;
+    background-color: #eee;
+    height: 100%;
+    width: 40px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* border-top: 1px solid black; 
+    border-bottom: 1px solid black;  */
+}
+
+.buy-bar-incrementer-subtract {
+    /* border-left: 1px solid black;  */
+}
+
+.buy-bar-incrementor-input::-webkit-outer-spin-button,
+.buy-bar-incrementor-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.buy-bar-incrementor-input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.buy-bar-incrementor-input {
+    box-sizing: border-box;
+    width: 40px;
+    height: 100%;
+    /* border: 1px solid black; */
+    border: none;
+    /* border-top: 1px solid black;  */
+    /* border-bottom: 1px solid black;  */
+    text-align: center;
+    user-select: none;
+}
+
+.buy-bar-incrementor-input:focus {
+    outline-width: 0;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.buy-bar-button {   
+    height: 100%;
     font-size: 20px;
     font-weight: 600;
-    padding: 15px;
+    padding: 0 15px;
     background-color: black;
     color: white;
     transition: 0.2s ease-out;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buy-bar-button-red:hover {
