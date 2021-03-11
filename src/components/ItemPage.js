@@ -1,17 +1,18 @@
 import React from 'react'
 import inventory from "./inventory"
 
-const ItemPage = (props) => {
-    const { params } = props.match
+const ItemPage = ({onAddBasket, match: {params}}) => {
     const collection = params.collection
     const id = parseInt(params.id)
 
     const item = inventory[collection].find(item => item.id === id)
 
+    const handleAddBasket = (item) => { onAddBasket(item) } 
+
     return (
         <div className="ItemPage">
             <ProductDisplay item={item} />
-            <BuyBar item={item} collection={collection}/>
+            <BuyBar item={item} collection={collection} onAddBasket={handleAddBasket}/>
         </div>
     )
 }
@@ -24,9 +25,9 @@ const ProductDisplay = ({ item }) => {
     )
 }
 
-const BuyBar = ({ item, collection }) => {
+const BuyBar = ({ item, collection, onAddBasket }) => {
 
-    //TODO:  Use `${collection}-buy-button`
+    const handleAddBasket = (item) => { onAddBasket(item) }
 
     const addClassFromCollection = () => { return `buy-bar-button-${collection}` }
 
@@ -44,7 +45,10 @@ const BuyBar = ({ item, collection }) => {
                 </div>
             </div>
             <div className="buy-bar-button-container">
-                <div className={`buy-bar-button ${addClassFromCollection()}`}>
+                <div 
+                    className={`buy-bar-button ${addClassFromCollection()}`} 
+                    onClick={() => handleAddBasket(item)}
+                >
                     Add To Basket
                 </div>
             </div>
