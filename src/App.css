@@ -427,7 +427,11 @@ body {
     font-size: 18px;
 }
 
-.buy-bar-price-container {
+.buy-bar-price-stock-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
@@ -435,19 +439,21 @@ body {
 }
 
 .buy-bar-button-container {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     align-items: center;
     height: 60px;
 }
 
-.buy-bar-incrementer {
+.buy-bar-quantity {
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.buy-bar-incrementer-subtract,
-.buy-bar-incrementer-add {
+.buy-bar-quantity-increment,
+.buy-bar-quantity-decrement {
     box-sizing: border-box;
     background-color: #eee;
     height: 100%;
@@ -457,37 +463,35 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* border-top: 1px solid black; 
-    border-bottom: 1px solid black;  */
 }
 
-.buy-bar-incrementer-subtract {
-    /* border-left: 1px solid black;  */
+.buy-bar-quantity-disable {
+    opacity: 0.5;
+    cursor: none;
+    pointer-events: none;
 }
 
-.buy-bar-incrementor-input::-webkit-outer-spin-button,
-.buy-bar-incrementor-input::-webkit-inner-spin-button {
+.buy-bar-quantity-input::-webkit-outer-spin-button,
+.buy-bar-quantity-input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
 }
 
-.buy-bar-incrementor-input[type=number] {
+.buy-bar-quantity-input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-.buy-bar-incrementor-input {
+.buy-bar-quantity-input {
     box-sizing: border-box;
+    font-size: 20px;
     width: 40px;
     height: 100%;
-    /* border: 1px solid black; */
     border: none;
-    /* border-top: 1px solid black;  */
-    /* border-bottom: 1px solid black;  */
     text-align: center;
     user-select: none;
 }
 
-.buy-bar-incrementor-input:focus {
+.buy-bar-quantity-input:focus {
     outline-width: 0;
 }
 
@@ -502,6 +506,7 @@ body {
 
 .buy-bar-button {   
     height: 100%;
+    width: 100%;
     font-size: 20px;
     font-weight: 600;
     padding: 0 15px;

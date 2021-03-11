@@ -32,10 +32,11 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
 
     const handleDecrement = () => { if(quantity > 1) setQuantity(quantity - 1) }
 
-    const handleIncrement = () => { 
-        //TODO: If (quantity < item.stock)
-        setQuantity(quantity + 1)
-    }
+    const disableDecrement = () => { if(quantity === 1) return "buy-bar-quantity-disable"}
+
+    const handleIncrement = () => { if(quantity < item.stock) setQuantity(quantity + 1) }
+
+    const disableIncrement = () => { if(quantity === item.stock) return "buy-bar-quantity-disable"}
 
     const handleAddBasket = (item) => { onAddBasket(item) }
 
@@ -49,23 +50,26 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
                     {item.desc}
                 </div>  
             </div>
-            <div className="buy-bar-price-container">
+            <div className="buy-bar-price-stock-container">
                 <div className="buy-bar-price">
                     £{item.price}
                 </div>
+                <div className="buy-bar-stock">
+                    In Stock: {item.stock}
+                </div>
             </div>
             <div className="buy-bar-button-container">
-                <div className="buy-bar-incrementer">
-                    <div className="buy-bar-incrementer-subtract noSelect" onClick={handleDecrement}>
+                <div className="buy-bar-quantity">
+                    <div className={`buy-bar-quantity-increment noSelect ${disableDecrement()}`} onClick={handleDecrement}>
                         -
                     </div>
-                    <input type="number" className="buy-bar-incrementor-input" value={quantity} onChange={(e) => handleInputChange(e.target.value)}></input>
-                    <div className="buy-bar-incrementer-add noSelect" onClick={handleIncrement}>
+                    <input type="number" className="buy-bar-quantity-input" value={quantity} onChange={(e) => handleInputChange(e.target.value)}></input>
+                    <div className={`buy-bar-quantity-decrement noSelect ${disableIncrement()}`} onClick={handleIncrement}>
                         +
                     </div>
                 </div>
                 <div 
-                    className={`buy-bar-button ${addClassFromCollection()}`} 
+                    className={`buy-bar-button noSelect ${addClassFromCollection()}`} 
                     onClick={() => handleAddBasket(item)}
                 >
                     Add To Basket
