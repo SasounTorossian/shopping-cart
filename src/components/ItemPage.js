@@ -32,7 +32,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
 
     const handleDecrement = () => { if(quantity > 1) setQuantity(quantity - 1) }
 
-    const disableDecrement = () => { if(quantity === 1) return "buy-bar-quantity-disable"}
+    const disableDecrement = () => { if(quantity <= 1) return "buy-bar-quantity-disable"}
 
     const handleIncrement = () => { if(quantity < item.stock) setQuantity(quantity + 1) }
 
@@ -44,7 +44,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
 
     const disableAddBasketContent = () => {return item.stock <= 0 ? "Out of Stock" : "Add to Basket"}
 
-    const addClassFromCollection = () => { return `buy-bar-button-${collection}` }
+    const colourSchemeAddBasket = () => { return `buy-bar-button-${collection}` }
 
     return (
         <div className="buy-bar-container">
@@ -73,7 +73,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
                     <input 
                         type="number" 
                         className="buy-bar-quantity-input" 
-                        value={quantity} 
+                        value={quantity <= item.stock ? quantity : setQuantity(item.stock)} 
                         onChange={(e) => handleInputChange(e.target.value)}
                     >
                     </input>
@@ -85,7 +85,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
                     </div>
                 </div>
                 <div 
-                    className={`buy-bar-button noSelect ${addClassFromCollection()} ${disableAddBasket()}`} 
+                    className={`buy-bar-button noSelect ${colourSchemeAddBasket()} ${disableAddBasket()}`} 
                     onClick={() => handleAddBasket(item)}
                 >
                     {disableAddBasketContent()}
