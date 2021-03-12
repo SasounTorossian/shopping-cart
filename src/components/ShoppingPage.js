@@ -43,13 +43,13 @@ const SideBar = ({ collection }) => {
 const ProductList = ({ collection }) => {
     return (
         <div className="product-list">
-            {inventory[collection].map((item, idx) => {
+            {inventory.filter(item => item.collection === collection).map((item, idx) => {
                 return (
                     <div className="item" key={idx}>
                         <Link to={`/shoppingpage/${collection}/${item.id}`} className="item-link">
                             <div className="item-padding-container">
                                 <div className="item-image-container">
-                                    <img className="item-image" src={item.image}></img>
+                                    <img className="item-image" src={item.image} alt=""></img>
                                 </div>
                                 <div className="item-name">{item.name}</div>
                             </div>

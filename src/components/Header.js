@@ -5,7 +5,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Header = ({ basket }) => {
     console.log(basket);
-    const basketSize = basket.length
+    //TODO: Use Reducer to add all the values.
+    const basketSize = basket.forEach(itemAndQuant => {
+        
+    });
+    // console.log(basketSize);
 
     const isCartEmpty = () => { if (basketSize === 0) return "basket-empty"}
 

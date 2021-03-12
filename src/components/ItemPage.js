@@ -5,9 +5,9 @@ const ItemPage = ({onAddBasket, match: {params}}) => {
     const collection = params.collection
     const id = parseInt(params.id)
 
-    const item = inventory[collection].find(item => item.id === id)
+    const item = inventory.find(item => item.id === id)
 
-    const handleAddBasket = (item) => { onAddBasket(item) } 
+    const handleAddBasket = (item, quantity) => { onAddBasket(item, quantity) } 
 
     return (
         <div className="ItemPage">
@@ -20,7 +20,7 @@ const ItemPage = ({onAddBasket, match: {params}}) => {
 const ProductDisplay = ({ item }) => {
     return (
         <div className="product-display-container">
-            <img className="product-display-image" src={item.image}></img>
+            <img className="product-display-image" src={item.image} alt=""></img>
         </div>  
     )
 }
@@ -38,7 +38,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
 
     const disableIncrement = () => { if(quantity === item.stock) return "buy-bar-quantity-disable"}
 
-    const handleAddBasket = (item) => { onAddBasket(item) }
+    const handleAddBasket = (item) => { onAddBasket(item, quantity) }
 
     const addClassFromCollection = () => { return `buy-bar-button-${collection}` }
 
@@ -60,11 +60,23 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
             </div>
             <div className="buy-bar-button-container">
                 <div className="buy-bar-quantity">
-                    <div className={`buy-bar-quantity-increment noSelect ${disableDecrement()}`} onClick={handleDecrement}>
+                    <div 
+                        className={`buy-bar-quantity-increment noSelect ${disableDecrement()}`} 
+                        onClick={handleDecrement}
+                    >
                         -
                     </div>
-                    <input type="number" className="buy-bar-quantity-input" value={quantity} onChange={(e) => handleInputChange(e.target.value)}></input>
-                    <div className={`buy-bar-quantity-decrement noSelect ${disableIncrement()}`} onClick={handleIncrement}>
+                    <input 
+                        type="number" 
+                        className="buy-bar-quantity-input" 
+                        value={quantity} 
+                        onChange={(e) => handleInputChange(e.target.value)}
+                    >
+                    </input>
+                    <div 
+                        className={`buy-bar-quantity-decrement noSelect ${disableIncrement()}`} 
+                        onClick={handleIncrement}
+                    >
                         +
                     </div>
                 </div>
