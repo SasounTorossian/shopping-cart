@@ -36,9 +36,13 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
 
     const handleIncrement = () => { if(quantity < item.stock) setQuantity(quantity + 1) }
 
-    const disableIncrement = () => { if(quantity === item.stock) return "buy-bar-quantity-disable"}
+    const disableIncrement = () => { if(quantity === item.stock || item.stock === 0) return "buy-bar-quantity-disable"}
 
     const handleAddBasket = (item) => { onAddBasket(item, quantity) }
+
+    const disableAddBasket = () => {if(item.stock <= 0) return "buy-bar-button-disable"}
+
+    const disableAddBasketContent = () => {return item.stock <= 0 ? "Out of Stock" : "Add to Basket"}
 
     const addClassFromCollection = () => { return `buy-bar-button-${collection}` }
 
@@ -81,10 +85,10 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
                     </div>
                 </div>
                 <div 
-                    className={`buy-bar-button noSelect ${addClassFromCollection()}`} 
+                    className={`buy-bar-button noSelect ${addClassFromCollection()} ${disableAddBasket()}`} 
                     onClick={() => handleAddBasket(item)}
                 >
-                    Add To Basket
+                    {disableAddBasketContent()}
                 </div>
             </div>
         </div>

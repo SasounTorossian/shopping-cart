@@ -519,6 +519,13 @@ body {
     align-items: center;
 }
 
+.buy-bar-button-disable{
+    content: "Out of Stock";
+    opacity: 0.5;
+    cursor: none;
+    pointer-events: none;
+}
+
 .buy-bar-button-red:hover {
     background: var(--colour-red);
 }
