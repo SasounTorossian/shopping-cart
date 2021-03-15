@@ -15,11 +15,17 @@ function App() {
   const handleAddBasket = (item, quantity) => {
     inventory.find(i => i.id === item.id).stock -= quantity
 
-    const itemAndQuantity = {
-      item: item, 
-      quantity: quantity
+    const newBasket = [...basket]
+    let newItem = newBasket.find(i => i.item.id === item.id)
+
+    if(newItem === undefined) {
+      newItem = { item: item, quantity: quantity }
+      setBasket([...newBasket, newItem]) 
     }
-    setBasket([...basket, itemAndQuantity]) 
+    else {
+      newItem.quantity += quantity
+      setBasket(newBasket) 
+    } 
   }
 
   return (

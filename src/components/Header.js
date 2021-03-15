@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Header = ({ basket }) => {
+    console.log(basket);
     const basketSize = basket.reduce((a, b) => a + b.quantity, 0);
 
     const isCartEmpty = () => { if (basketSize === 0) return "basket-empty"}
