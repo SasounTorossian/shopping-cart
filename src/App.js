@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage"
 import ShoppingPage from "./components/ShoppingPage"
 import ItemPage from "./components/ItemPage"
 import inventory from "./components/inventory"
+import BasketPage from "./components/BasketPage"
 
 import { Switch, Route, useLocation } from "react-router-dom"
 
@@ -38,6 +39,12 @@ function App() {
             exact path="/shoppingpage/:collection/:id" 
             render={(props) => (
               <ItemPage {...props} onAddBasket={handleAddBasket} />
+            )}
+          />
+          <Route 
+            exact path="/basket" 
+            render={(props) => (
+              <BasketPage {...props} basket={basket} />
             )}
           />
         </Switch>

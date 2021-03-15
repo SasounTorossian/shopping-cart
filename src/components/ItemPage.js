@@ -32,17 +32,17 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
 
     const handleDecrement = () => { if(quantity > 1) setQuantity(quantity - 1) }
 
-    const disableDecrement = () => { if(quantity <= 1) return "buy-bar-quantity-disable"}
+    const disableDecrement = () => { if(quantity <= 1) return "buy-bar-quantity-disable" }
 
     const handleIncrement = () => { if(quantity < item.stock) setQuantity(quantity + 1) }
 
-    const disableIncrement = () => { if(quantity === item.stock || item.stock === 0) return "buy-bar-quantity-disable"}
+    const disableIncrement = () => { if(quantity === item.stock || item.stock === 0) return "buy-bar-quantity-disable" }
 
     const handleAddBasket = (item) => { onAddBasket(item, quantity) }
 
-    const disableAddBasket = () => {if(item.stock <= 0) return "buy-bar-button-disable"}
+    const disableAddBasket = () => { if(item.stock <= 0) return "buy-bar-button-disable" }
 
-    const disableAddBasketContent = () => {return item.stock <= 0 ? "Out of Stock" : "Add to Basket"}
+    const disableAddBasketContent = () => { return item.stock <= 0 ? "Out of Stock" : "Add to Basket" }
 
     const colourSchemeAddBasket = () => { return `buy-bar-button-${collection}` }
 

@@ -22,7 +22,7 @@ const Header = ({ basket }) => {
                 <Link to="">
                     <h3 className="nav-link">Search</h3>   
                 </Link>
-                <Link to="">
+                <Link to="/basket">
                     <div className="basket-container">
                         <h3 className="nav-link">Basket</h3>   
                         <div className={`basket-number ${isCartEmpty()}`}>{basketSize}</div>
