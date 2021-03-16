@@ -29,6 +29,12 @@ function App() {
     } 
   }
 
+  // TODO: Rename ItemQ to ItemBasket
+  const deleteBasket = (itemQ) => {
+    setBasket(basket.filter(itemBasket => itemBasket.item.id !== itemQ.item.id))
+    inventory.find(item => item.id === itemQ.item.id).stock += itemQ.quantity
+  }
+
   return (
     <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
         <Header basket={basket}/>
@@ -44,7 +50,7 @@ function App() {
           <Route 
             exact path="/basket" 
             render={(props) => (
-              <BasketPage {...props} basket={basket} />
+              <BasketPage {...props} basket={basket} deleteBasket={deleteBasket}/>
             )}
           />
         </Switch>

@@ -557,10 +557,12 @@ body {
 }
 
 .basket-item {
+    box-sizing: border-box;
+    border: 2px solid black;
     margin-top: 50px;
     height: 100px;
     width: 80%;
-    background: chocolate;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -569,11 +571,15 @@ body {
 .basket-item-info {
     height: 100%;
     width: 60%;
-    background: blue;
+    background: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0 50px;
+}
+
+.basket-item-info > * {
+    width: 30%;
 }
 
 .basket-item-image-container {
@@ -597,31 +603,50 @@ body {
 }
 
 .basket-item-delete {
-    background: crimson;
-    padding: 30px;
+    background: black;
+    padding: 5px 15px;
     margin: 0 50px;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.basket-item-delete:hover {
+    background-color: crimson;
+    transform: scale(1.1);
 }
 
 .basket-checkout {
     margin-top: 50px;
     height: 100px;
     width: 80%;
-    background: cyan;
+    background: white;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
+.basket-checkout-disable {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .basket-checkout-link {
     text-decoration: none;
+    width: 150px;
+    text-align: center;
 }
 
 .basket-checkout-button {
     font-size: 20px;
     padding: 20px;
-    background: red;
+    background: black;
     font-weight: 600;
-    margin: 0 50px;
+    color: white;
+    transition: 0.2s ease-out;
+}
+
+.basket-checkout-button:hover {
+    transform: scale(1.05);
 }
 
 /* FOOTER */

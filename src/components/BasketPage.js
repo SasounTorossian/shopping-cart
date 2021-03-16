@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const BasketPage = ({ basket }) => {
-    console.log(basket);
-
+const BasketPage = ({ basket, deleteBasket }) => {
     return (
         <div className="BasketPage">
-            <BasketItems basket={basket}/>
-            <BasketCheckout />
+            <BasketItems basket={basket} deleteBasket={deleteBasket}/>
+            <BasketCheckout basket={basket}/>
         </div>
     )
 }
 
-const BasketItems = ({ basket }) => {
+const BasketItems = ({ basket, deleteBasket }) => {
     return (
         <div className="basket-items">
             {basket.map((itemQ, idx) => {
@@ -29,8 +29,8 @@ const BasketItems = ({ basket }) => {
                                 {itemQ.quantity}
                             </div>
                         </div>
-                        <div className="basket-item-delete">
-                            X
+                        <div className="basket-item-delete" onClick={() => deleteBasket(itemQ)}>
+                            <FontAwesomeIcon icon={faTrash} size="lg" className="nav-link git-link"/>
                         </div>
                     </div>
                 )
@@ -39,9 +39,17 @@ const BasketItems = ({ basket }) => {
     )
 }
 
-const BasketCheckout = () => {
+const BasketCheckout = ({ basket }) => {
+    const disableCheckout = () => {
+        if (basket.length === 0 || 
+            basket === undefined ||
+            basket === null) {
+                return "basket-checkout-disable"
+        }
+    }
+
     return (
-        <div className="basket-checkout">
+        <div className={`basket-checkout ${disableCheckout()}`}>
             <Link to="" className="basket-checkout-link">
                 <p className="basket-checkout-button">Checkout</p>
             </Link>
