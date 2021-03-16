@@ -6,7 +6,6 @@ import ShoppingPage from "./components/ShoppingPage"
 import ItemPage from "./components/ItemPage"
 import inventory from "./components/inventory"
 import BasketPage from "./components/BasketPage"
-
 import { Switch, Route, useLocation } from "react-router-dom"
 
 function App() {
@@ -14,10 +13,10 @@ function App() {
   const location = useLocation()
 
   const handleAddBasket = (item, quantity) => {
-    inventory.find(i => i.id === item.id).stock -= quantity
+    inventory.find(inventoryItem => inventoryItem.id === item.id).stock -= quantity
 
     const newBasket = [...basket]
-    let newItem = newBasket.find(i => i.item.id === item.id)
+    let newItem = newBasket.find(basketItem => basketItem.item.id === item.id)
 
     if(newItem === undefined) {
       newItem = { item: item, quantity: quantity }
@@ -31,8 +30,8 @@ function App() {
 
   // TODO: Rename ItemQ to ItemBasket
   const deleteBasket = (itemQ) => {
-    setBasket(basket.filter(itemBasket => itemBasket.item.id !== itemQ.item.id))
-    inventory.find(item => item.id === itemQ.item.id).stock += itemQ.quantity
+    setBasket(basket.filter(basketItem => basketItem.item.id !== itemQ.item.id))
+    inventory.find(inventoryItem => inventoryItem.id === itemQ.item.id).stock += itemQ.quantity
   }
 
   return (

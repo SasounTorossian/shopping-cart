@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import inventory from "./inventory"
 
-
 const ShoppingPage = () => {
     const { collection } = useParams()    
 

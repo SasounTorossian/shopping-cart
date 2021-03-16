@@ -7,7 +7,7 @@ const Header = ({ basket }) => {
     console.log(basket);
     const basketSize = basket.reduce((a, b) => a + b.quantity, 0);
 
-    const isCartEmpty = () => { if (basketSize === 0) return "basket-empty"}
+    const isBasketEmpty = () => { if (basketSize === 0) return "header-basket-empty"}
 
     return (
         <div className="Header">
@@ -25,7 +25,7 @@ const Header = ({ basket }) => {
                 <Link to="/basket">
                     <div className="basket-container">
                         <h3 className="nav-link">Basket</h3>   
-                        <div className={`basket-number ${isCartEmpty()}`}>{basketSize}</div>
+                        <div className={`basket-number ${isBasketEmpty()}`}>{basketSize}</div>
                     </div>
                 </Link>
                 <Link to="">
