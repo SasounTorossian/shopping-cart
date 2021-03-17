@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
+// basket component that gives overview to user of current basket contents.
 const BasketPage = ({ basket, deleteBasket }) => {
-    const emptyBasket = () => { return !basket.length && Array.isArray(basket) ? true : false }
+    // Check if basket is empty.
+    const isBasketEmpty = () => { return !basket.length && Array.isArray(basket) ? true : false }
 
+    // Use conditional rendering to render either invalid or valid basket based on basket condition.
     return (
         <div className="BasketPage">
-            {emptyBasket()
+            {isBasketEmpty()
             ? <InvalidBasket />
             : <ValidBasket basket={basket} deleteBasket={deleteBasket}/> 
             }
@@ -16,6 +19,7 @@ const BasketPage = ({ basket, deleteBasket }) => {
     )
 }
 
+// Component for empty basket. Display message.
 const InvalidBasket = () => {
     return (
         <p className="basket-empty">
@@ -24,6 +28,7 @@ const InvalidBasket = () => {
     )
 }
 
+// Component for non-empty basket. Display BasketItem and BasketCheckout components.
 const ValidBasket = ({ basket, deleteBasket }) => {
     return (
         <React.Fragment>
@@ -33,6 +38,7 @@ const ValidBasket = ({ basket, deleteBasket }) => {
     )
 }
 
+// Component for displaying all items in basket.
 const BasketItems = ({ basket, deleteBasket }) => {
     return (
         <div className="basket-items">
@@ -60,6 +66,7 @@ const BasketItems = ({ basket, deleteBasket }) => {
     )
 }
 
+// Component for rendering the checkout button at the end of the item list.
 const BasketCheckout = () => {
     return (
         <div className="basket-checkout">
