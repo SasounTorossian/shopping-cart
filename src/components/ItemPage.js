@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import inventory from "./inventory"
 
+// Item page component that displays individual item to user.
 const ItemPage = ({onAddBasket, match: {params}}) => {
+    // Get current collection which will determine "add to basket" button styling.
     const collection = params.collection
+
+    // Get id of object to display.
     const id = parseInt(params.id)
-
+    
+    // Use id to get the correct item from inventory to display.
     const item = inventory.find(item => item.id === id)
-
+    
+    // Add basket handler passed from App.js
     const handleAddBasket = (item, quantity) => { onAddBasket(item, quantity) } 
 
     return (
@@ -17,6 +23,7 @@ const ItemPage = ({onAddBasket, match: {params}}) => {
     )
 }
 
+// Component soley responsible for displaying item image.
 const ProductDisplay = ({ item }) => {
     return (
         <div className="product-display-container">
@@ -25,25 +32,36 @@ const ProductDisplay = ({ item }) => {
     )
 }
 
+// Buy bar component that displays item info, quantity selector, and "add to basket" button.
 const BuyBar = ({ item, collection, onAddBasket }) => {
+    // Set default quantity to 1
     const [quantity, setQuantity] = useState(1)
 
+    // Handle direct changes to quantity input.
     const handleInputChange = (value) => { if(Number(value) > 0) setQuantity(Number(value)) }
 
+    // Handle decrement button.
     const handleDecrement = () => { if(quantity > 1) setQuantity(quantity - 1) }
 
+    // Disable decrement button if value is less that 1.
     const disableDecrement = () => { if(quantity <= 1) return "buy-bar-quantity-disable" }
 
+    // Handle increment.
     const handleIncrement = () => { if(quantity < item.stock) setQuantity(quantity + 1) }
 
+    // Disable increment if quantity is at stock level, or if stock is empty.
     const disableIncrement = () => { if(quantity === item.stock || item.stock === 0) return "buy-bar-quantity-disable" }
 
+    // Add basket handler passed from ItemPage.
     const handleAddBasket = (item) => { onAddBasket(item, quantity) }
 
+    // Disable add basket button if stock is empty.
     const disableAddBasket = () => { if(item.stock <= 0) return "buy-bar-button-disable" }
 
+    // Change add basket text if stock is empty.
     const disableAddBasketContent = () => { return item.stock <= 0 ? "Out of Stock" : "Add to Basket" }
 
+    // Change add basket button hover colour based on collection.
     const colourSchemeAddBasket = () => { return `buy-bar-button-${collection}` }
 
     return (

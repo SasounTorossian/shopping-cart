@@ -8,10 +8,16 @@ import inventory from "./components/inventory"
 import BasketPage from "./components/BasketPage"
 import { Switch, Route, useLocation } from "react-router-dom"
 
+// Main App container that renders all components
 function App() {
   const [basket, setBasket] = useState([])
   const location = useLocation()
 
+  /*  Handles adding items to basket based on quantity. 
+   *  Will create new object if item doesn't exist,
+   *  or increment item by quantity if it already exists in basket. 
+   *  Reduces inventory stock by quantity too.
+   */
   const handleAddBasket = (item, quantity) => {
     inventory.find(inventoryItem => inventoryItem.id === item.id).stock -= quantity
 
@@ -28,12 +34,15 @@ function App() {
     } 
   }
 
-  // TODO: Rename ItemQ to ItemBasket
+  /** Handles deletion of basket item and places it back into stock.
+   * 
+   */
   const deleteBasket = (itemQ) => {
     setBasket(basket.filter(basketItem => basketItem.item.id !== itemQ.item.id))
     inventory.find(inventoryItem => inventoryItem.id === itemQ.item.id).stock += itemQ.quantity
   }
 
+  //TODO: Move styling into css file
   return (
     <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
         <Header basket={basket}/>

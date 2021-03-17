@@ -3,10 +3,12 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
+// Header component that holds logo and quick links.
 const Header = ({ basket }) => {
-    console.log(basket);
+    // Calculates basket size based on "quantity" variable in basket array.
     const basketSize = basket.reduce((a, b) => a + b.quantity, 0);
 
+    // Used to hide or display the basket counter in the header.
     const isBasketEmpty = () => { if (basketSize === 0) return "header-basket-empty"}
 
     return (

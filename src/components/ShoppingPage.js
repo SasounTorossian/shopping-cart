@@ -2,7 +2,9 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import inventory from "./inventory"
 
+// Shopping page component which renders all the items on sale.
 const ShoppingPage = () => {
+    // Gets collection (e.g. red) from url as param.
     const { collection } = useParams()    
 
     return (
@@ -13,13 +15,14 @@ const ShoppingPage = () => {
     )
 }
 
+// Sidebar component that allows user to switch between the different collections.
 const SideBar = ({ collection }) => {
+    // Changes background of sidebar based on current collection.
     const backgroundFromCollection = () => { return `side-bar-${collection}-active`}
 
+    // Highlights appropriate link in side bar if it is the currently selected collection.
     const ifRedCollection = () => { if(collection === "red") return "side-bar-link-red-active" }
-
     const ifGreyCollection = () => { if(collection === "grey") return "side-bar-link-grey-active" }
-
     const ifGoldCollection = () => { if(collection === "gold") return "side-bar-link-gold-active" }
     
     return (
@@ -39,6 +42,7 @@ const SideBar = ({ collection }) => {
     )
 }
 
+// Product list component that displays the items in a given collection
 const ProductList = ({ collection }) => {
     return (
         <div className="product-list">

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 
+// Footer component for displaying details at end of homepage.
 const Footer = () => {
     return (
         <div className="Footer">
@@ -14,6 +15,7 @@ const Footer = () => {
     )
 }
 
+// Contact us component to display mock form for communicating with company.
 const ContactUs = () => {
     return (
         <div className="contact-us">
@@ -49,6 +51,7 @@ const ContactUs = () => {
     )
 }
 
+// Site map component for access to all available pages.
 const Sitemap = () => {
     return (
         <div className="sitemap">
@@ -66,6 +69,7 @@ const Sitemap = () => {
     )
 }
 
+// Details component for displaying github and email links.
 const Details = () => {
     return (
         <div className="details">

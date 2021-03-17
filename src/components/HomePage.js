@@ -1,9 +1,8 @@
 import React from 'react'
 import Footer from "./Footer"
-
-
 import { Link } from "react-router-dom"
 
+// Homepage component that gives introduction to website.
 const HomePage = () => {
     return (
         <div className="HomePage">
