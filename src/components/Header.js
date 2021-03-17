@@ -30,9 +30,13 @@ const Header = ({ basket }) => {
                         <div className={`basket-number ${isBasketEmpty()}`}>{basketSize}</div>
                     </div>
                 </Link>
-                <Link to="">
+                <a 
+                    href="https://github.com/SasounTorossian" 
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     <FontAwesomeIcon icon={faGithub} size="2x" className="nav-link git-link"/>
-                </Link>
+                </a>
             </nav>
         </div>
     )

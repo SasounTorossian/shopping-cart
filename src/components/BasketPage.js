@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -70,9 +69,14 @@ const BasketItems = ({ basket, deleteBasket }) => {
 const BasketCheckout = () => {
     return (
         <div className="basket-checkout">
-            <Link to="" className="basket-checkout-link">
+            <a 
+                href="https://github.com/SasounTorossian" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="basket-checkout-link"
+            >
                 <p className="basket-checkout-button">Checkout</p>
-            </Link>
+            </a>
         </div>
     )
 }
