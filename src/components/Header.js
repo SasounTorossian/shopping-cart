@@ -1,12 +1,17 @@
 import React from 'react'
-import { Link, useLocation } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 // Header component that holds logo and quick links.
 const Header = ({ basket }) => {
-    const location = useLocation()
+    // Element to get distance of right border of "search" tab in header.
+    // Will be used to correctly align the search bar when opened.
+    const el = document.querySelector(".nav-bar-search")
+    let elDistanceToRight
+    if(el) { elDistanceToRight = window.innerWidth - el.getBoundingClientRect().right }
 
+    const location = useLocation()
     // Calculates basket size based on "quantity" variable in basket array.
     const basketSize = basket.reduce((a, b) => a + b.quantity, 0);
 
@@ -17,26 +22,28 @@ const Header = ({ basket }) => {
         <div className="Header">
             <h1 className="nav-title">The Collection</h1>
             <nav className="nav-bar">
-                <Link to="/">
+                <NavLink to="/" exact={true} activeClassName="nav-bar-active">
                     <h3 className="nav-link">Home</h3>
-                </Link>
-                <Link to="/shoppingpage/red">
+                </NavLink>
+                <NavLink to="/shoppingpage/red" activeClassName="nav-bar-active">
                     <h3 className="nav-link">Shopping</h3>
-                </Link>
-                <Link to={{
+                </NavLink>
+                <NavLink to={{
                     pathname: "/search",
-                    state: { previous: location },
+                    state: { previous: location, position: elDistanceToRight},
                 }}
                 style={{pointerEvents: location.pathname === "/search" ? "none" : null}}
+                activeClassName="nav-bar-active"
+                className="nav-bar-search"
                 >
                     <h3 className="nav-link">Search</h3>   
-                </Link>
-                <Link to="/basket">
+                </NavLink>
+                <NavLink to="/basket" activeClassName="nav-bar-active">
                     <div className="basket-container">
                         <h3 className="nav-link">Basket</h3>   
                         <div className={`basket-number ${isBasketEmpty()}`}>{basketSize}</div>
                     </div>
-                </Link>
+                </NavLink>
                 <a 
                     href="https://github.com/SasounTorossian" 
                     target="_blank"

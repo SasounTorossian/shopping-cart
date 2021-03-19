@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { withRouter, useHistory  } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory, Link  } from 'react-router-dom';
 import inventory from "./inventory"
 
-const SearchModal = () => {
+const SearchModal = ({ position }) => {
     const history = useHistory()
     const [search, setSearch] = useState("")
     const [wrapperShade, setWrapperShade] = useState("dark")
@@ -12,9 +12,7 @@ const SearchModal = () => {
         history.goBack();
     }
 
-    const handleSearch = (e) => {
-        setSearch(e.target.value)
-    }
+    const handleSearch = (e) => { setSearch(e.target.value) }
 
     const filteredItems = inventory.filter((item) => {
         const itemLowerCase = item.name.toLowerCase()
@@ -30,6 +28,7 @@ const SearchModal = () => {
         <div className={`modal-search-wrapper ${modalWrapperShade()}`} onClick={closeModal}>
             <div 
                 className="modal-search-inner" 
+                style={{ right: position }}
                 onClick={(e) => e.stopPropagation()} 
                 onMouseLeave={() => setWrapperShade("dark")}
                 onMouseEnter={() => setWrapperShade("light")}
@@ -54,10 +53,10 @@ const SearchModal = () => {
                     </button>
                 </div>
                 <div className="modal-search-results">
-                    {filteredItems.map((product, idx) => (
-                        <div className="modal-search-item" key={idx}>
-                            <h3>{product.name}</h3>
-                        </div>
+                    {filteredItems.map((item, idx) => (
+                        <Link to={`/shoppingpage/${item.collection}/${item.id}`} key={idx} className="modal-search-item">
+                            <h3>{item.name}</h3>
+                        </Link>
                     ))}
                 </div>
             </div>

@@ -48,7 +48,7 @@ function App() {
   //TODO: Move styling into css file
   return (
     <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
-        <Header basket={basket}/>
+        <Header basket={basket} />
         <Switch location={previous || location}>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shoppingpage/:collection" component={ShoppingPage} />
@@ -65,7 +65,14 @@ function App() {
               )}
               />
         </Switch>
-        {previous && <Route exact path="/search" component={SearchModal} />}
+        {previous &&           
+          <Route 
+              exact path="/search" 
+              render={(props) => (
+                <SearchModal {...props} position={location.state.position}/>
+                )}
+          />
+        }
     </div>
   );
 }
