@@ -5,19 +5,12 @@ import inventory from "./inventory"
 const SearchModal = () => {
     const history = useHistory()
     const [search, setSearch] = useState("")
+    const [wrapperShade, setWrapperShade] = useState("dark")
 
-    const closeModal = e => {
+    const closeModal = (e) => {
         e.stopPropagation();
         history.goBack();
     }
-
-    // useEffect(() => {
-    //     document.body.classList.add("overflow-hidden");
-    
-    //     return () => {
-    //       document.body.classList.remove("overflow-hidden");
-    //     };
-    // }, [])
 
     const handleSearch = (e) => {
         setSearch(e.target.value)
@@ -29,9 +22,18 @@ const SearchModal = () => {
         if (itemLowerCase.includes(searchLowerCase) && searchLowerCase) { return item }
     });
 
+    const modalWrapperShade = () => {
+        return wrapperShade === "light" ? "modal-search-wrapper-light" : "modal-search-wrapper-dark"
+    }
+
     return (
-        <div className="modal-search-wrapper" onClick={closeModal} >
-            <div className="modal-search-inner" onClick={(e) => e.stopPropagation()}>
+        <div className={`modal-search-wrapper ${modalWrapperShade()}`} onClick={closeModal}>
+            <div 
+                className="modal-search-inner" 
+                onClick={(e) => e.stopPropagation()} 
+                onMouseLeave={() => setWrapperShade("dark")}
+                onMouseEnter={() => setWrapperShade("light")}
+            >
                 <div className="modal-search-searchbar">
                     <input className="modal-search-input" onChange={handleSearch}/>
                     <button className="modal-search-button">
