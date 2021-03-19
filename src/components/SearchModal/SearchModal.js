@@ -1,6 +1,7 @@
+import "./SearchModal.css"
 import React, { useState } from 'react';
 import { useHistory, Link  } from 'react-router-dom';
-import inventory from "./inventory"
+import inventory from "../inventory"
 
 const SearchModal = ({ position }) => {
     const history = useHistory()

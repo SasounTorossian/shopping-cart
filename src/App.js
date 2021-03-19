@@ -1,13 +1,13 @@
 import './App.css';
 import React, { useState } from 'react'
 import { Switch, Route, useLocation } from "react-router-dom"
-import Header from "./components/Header"
-import HomePage from "./components/HomePage"
-import ShoppingPage from "./components/ShoppingPage"
-import ItemPage from "./components/ItemPage"
-import BasketPage from "./components/BasketPage"
+import Header from "./components/Header/Header"
+import HomePage from "./components/HomePage/HomePage"
+import ShoppingPage from "./components/ShoppingPage/ShoppingPage"
+import ItemPage from "./components/ItemPage/ItemPage"
+import BasketPage from "./components/BasketPage/BasketPage"
+import SearchModal from "./components/SearchModal/SearchModal"
 import inventory from "./components/inventory"
-import SearchModal from "./components/SearchModal"
 
 // Main App container that renders all components
 function App() {

@@ -1,5 +1,6 @@
+import "./ItemPage.css"
 import React, { useState } from 'react'
-import inventory from "./inventory"
+import inventory from "../inventory"
 
 // Item page component that displays individual item to user.
 const ItemPage = ({onAddBasket, match: {params}}) => {

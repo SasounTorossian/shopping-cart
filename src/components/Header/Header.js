@@ -1,4 +1,5 @@
-import React from 'react'
+import './Header.css';
+import React, { useEffect } from 'react'
 import { NavLink, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'

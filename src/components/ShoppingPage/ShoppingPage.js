@@ -1,6 +1,7 @@
+import "./ShoppingPage.css"
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import inventory from "./inventory"
+import inventory from "../inventory"
 
 // Shopping page component which renders all the items on sale.
 const ShoppingPage = () => {

@@ -1,0 +1,86 @@
+/* HEADER */
+.Header {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    color: #eee;
+    background: #111;
+    z-index: 1;
+}
+
+.nav-title {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px 0;
+    padding-left: 3%;
+    flex-basis: 40%;
+    font-size: 50px;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* padding-right: 3%; */
+    overflow: hidden;
+}
+
+.nav-bar-active { 
+    background: white;
+}
+
+.nav-bar-active .nav-link{ 
+    color: black;
+    transform: scale(1.2);
+}
+
+.nav-bar a {
+    text-decoration: none;
+    width: 100px;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-bar a:hover .nav-link{
+    transform: scale(1.2);
+}
+
+.nav-link {
+    margin: 10px 0;
+    color: #eee;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+.basket-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.basket-number {
+    opacity: 1;
+    margin: 0px;
+    position: absolute;
+    right: 0px;
+    color: #111;
+    text-align: center;
+    background: #eee;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    transition: 0.2s ease-out;
+}
+
+.header-basket-empty {
+    opacity: 0;
+}
+
+.git-link, .fb-link, .email-link {
+    padding: 0;
+}

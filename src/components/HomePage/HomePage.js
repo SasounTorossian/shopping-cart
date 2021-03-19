@@ -1,5 +1,6 @@
+import "./HomePage.css"
 import React from 'react'
-import Footer from "./Footer"
+import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom"
 
 // Homepage component that gives introduction to website.
