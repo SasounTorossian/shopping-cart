@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 // Header component that holds logo and quick links.
 const Header = ({ basket }) => {
+    const location = useLocation()
+
     // Calculates basket size based on "quantity" variable in basket array.
     const basketSize = basket.reduce((a, b) => a + b.quantity, 0);
 
@@ -21,7 +23,12 @@ const Header = ({ basket }) => {
                 <Link to="/shoppingpage/red">
                     <h3 className="nav-link">Shopping</h3>
                 </Link>
-                <Link to="">
+                <Link to={{
+                    pathname: "/search",
+                    state: { previous: location },
+                }}
+                style={{pointerEvents: location.pathname === "/search" ? "none" : null}}
+                >
                     <h3 className="nav-link">Search</h3>   
                 </Link>
                 <Link to="/basket">

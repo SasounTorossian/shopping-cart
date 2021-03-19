@@ -1,18 +1,21 @@
 import './App.css';
 import React, { useState } from 'react'
+import { Switch, Route, useLocation } from "react-router-dom"
 import Header from "./components/Header"
 import HomePage from "./components/HomePage"
 import ShoppingPage from "./components/ShoppingPage"
 import ItemPage from "./components/ItemPage"
-import inventory from "./components/inventory"
 import BasketPage from "./components/BasketPage"
-import { Switch, Route, useLocation } from "react-router-dom"
+import inventory from "./components/inventory"
+import SearchModal from "./components/SearchModal"
 
 // Main App container that renders all components
 function App() {
   const [basket, setBasket] = useState([])
   const location = useLocation()
 
+  const previous = location.state && location.state.previous
+  
   /*  Handles adding items to basket based on quantity. 
    *  Will create new object if item doesn't exist,
    *  or increment item by quantity if it already exists in basket. 
@@ -46,7 +49,7 @@ function App() {
   return (
     <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
         <Header basket={basket}/>
-        <Switch>
+        <Switch location={previous || location}>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shoppingpage/:collection" component={ShoppingPage} />
           <Route 
@@ -59,9 +62,10 @@ function App() {
             exact path="/basket" 
             render={(props) => (
               <BasketPage {...props} basket={basket} deleteBasket={deleteBasket}/>
-            )}
-          />
+              )}
+              />
         </Switch>
+        {previous && <Route exact path="/search" component={SearchModal} />}
     </div>
   );
 }
