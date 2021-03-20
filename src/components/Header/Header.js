@@ -36,6 +36,7 @@ const Header = ({ basket }) => {
                 <NavLink 
                     to="/shoppingpage/red" 
                     className="nav-link"
+                    isActive={() => ["/shoppingpage/red", "/shoppingpage/grey", "/shoppingpage/gold"].includes(location.pathname)}
                     activeClassName="nav-bar-active"
                 >
                     <div className="normal-container">
