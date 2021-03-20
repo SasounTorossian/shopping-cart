@@ -1,16 +1,26 @@
 import './Header.css';
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 // Header component that holds logo and quick links.
 const Header = ({ basket }) => {
-    // Element to get distance of right border of "search" tab in header.
-    // Will be used to correctly align the search bar when opened.
-    const el = document.querySelector(".nav-bar-search")
-    let elDistanceToRight
-    if(el) { elDistanceToRight = window.innerWidth - el.getBoundingClientRect().right }
+    // State holds on to distance of right side of search tab to right side of screen.
+    // Used to align the search bar that descends in the modal.
+    const [rightBorderDistance, setRightBorderDistance] = useState(0)
+
+    // textInput must be declared here so the ref can refer to it
+    const searchInput = useRef(null);
+
+    // When element loads, get the right border distance and set state.
+    useEffect(() => {
+        const element = searchInput.current
+        if(element) setRightBorderDistance(window.innerWidth - element.getBoundingClientRect().right)  
+    })
+
+    
+    // if(el) { elDistanceToRight =  }
 
     const location = useLocation()
     // Calculates basket size based on "quantity" variable in basket array.
@@ -45,11 +55,11 @@ const Header = ({ basket }) => {
                 </NavLink>
                 <NavLink to={{
                     pathname: "/search",
-                    state: { previous: location, position: elDistanceToRight},
-                }}
-                style={{pointerEvents: location.pathname === "/search" ? "none" : null}}
-                className="nav-bar-search nav-link"
-                activeClassName="nav-bar-active"
+                    state: { previous: location, position: rightBorderDistance},
+                    }}
+                    className="nav-bar-search nav-link"
+                    activeClassName="nav-bar-active"
+                    ref={searchInput}
                 >
                     <div className="normal-container">
                         <h3 className="nav-text">Search</h3>   

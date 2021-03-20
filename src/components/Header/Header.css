@@ -27,6 +27,7 @@
 
 .nav-bar-active { 
     background: white;
+    pointer-events: none;
 }
 
 .nav-text {
