@@ -22,7 +22,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* padding-right: 3%; */
     overflow: hidden;
 }
 
@@ -30,7 +29,11 @@
     background: white;
 }
 
-.nav-bar-active .nav-link{ 
+.nav-text {
+    transition: 0.2s ease-out;
+}
+
+.nav-bar-active .normal-container .nav-text{ 
     color: black;
     transform: scale(1.2);
 }
@@ -46,13 +49,12 @@
     transition: 0.2s ease-in-out;
 }
 
-.nav-bar a:hover .nav-link{
+.nav-link:hover .normal-container .nav-text{
     transform: scale(1.2);
 }
 
 .nav-link {
-    margin: 10px 0;
-    color: #eee;
+    color: white;
     cursor: pointer;
     transition: 0.2s ease-out;
 }
@@ -61,16 +63,18 @@
     position: relative;
     display: flex;
     justify-content: center;
+    transition: 0.2s ease-out;
 }
 
 .basket-number {
     opacity: 1;
     margin: 0px;
     position: absolute;
-    right: 0px;
-    color: #111;
+    right: -18px;
+    bottom: 13px;
+    color: black;
     text-align: center;
-    background: #eee;
+    background: white;
     height: 17px;
     width: 17px;
     border-radius: 50%;
@@ -81,6 +85,19 @@
     opacity: 0;
 }
 
-.git-link, .fb-link, .email-link {
-    padding: 0;
+.nav-link:hover .basket-container{
+    transform: scale(1.2);
+}
+
+.nav-bar-active .basket-container{ 
+    transform: scale(1.2);
+}
+
+.nav-bar-active .basket-container .nav-text{ 
+    color: black;
+}
+
+.nav-bar-active .basket-container .basket-number{ 
+    background: black;
+    color: white;
 }

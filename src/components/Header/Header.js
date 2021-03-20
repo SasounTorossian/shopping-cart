@@ -23,25 +23,44 @@ const Header = ({ basket }) => {
         <div className="Header">
             <h1 className="nav-title">The Collection</h1>
             <nav className="nav-bar">
-                <NavLink to="/" exact={true} activeClassName="nav-bar-active">
-                    <h3 className="nav-link">Home</h3>
+                <NavLink 
+                    to="/" 
+                    exact={true} 
+                    className="nav-link"
+                    activeClassName="nav-bar-active"
+                >
+                    <div className="normal-container">
+                        <h3 className="nav-text">Home</h3>
+                    </div>
                 </NavLink>
-                <NavLink to="/shoppingpage/red" activeClassName="nav-bar-active">
-                    <h3 className="nav-link">Shopping</h3>
+                <NavLink 
+                    to="/shoppingpage/red" 
+                    className="nav-link"
+                    activeClassName="nav-bar-active"
+                >
+                    <div className="normal-container">
+                        <h3 className="nav-text">Shopping</h3>
+                    </div>
                 </NavLink>
                 <NavLink to={{
                     pathname: "/search",
                     state: { previous: location, position: elDistanceToRight},
                 }}
                 style={{pointerEvents: location.pathname === "/search" ? "none" : null}}
+                className="nav-bar-search nav-link"
                 activeClassName="nav-bar-active"
-                className="nav-bar-search"
                 >
-                    <h3 className="nav-link">Search</h3>   
+                    <div className="normal-container">
+                        <h3 className="nav-text">Search</h3>   
+                    </div>
                 </NavLink>
-                <NavLink to="/basket" activeClassName="nav-bar-active">
+                <NavLink 
+                    to="/basket" 
+                    className="nav-link"
+                    activeClassName="nav-bar-active"
+                >
                     <div className="basket-container">
-                        <h3 className="nav-link">Basket</h3>   
+                        <h3 className="nav-text">Basket</h3>   
                         <div className={`basket-number ${isBasketEmpty()}`}>{basketSize}</div>
                     </div>
                 </NavLink>
@@ -49,8 +68,11 @@ const Header = ({ basket }) => {
                     href="https://github.com/SasounTorossian" 
                     target="_blank"
                     rel="noreferrer"
+                    className="nav-link"
                 >
-                    <FontAwesomeIcon icon={faGithub} size="2x" className="nav-link git-link"/>
+                    <div className="normal-container">
+                        <FontAwesomeIcon icon={faGithub} size="2x" className="nav-text"/>
+                    </div>
                 </a>
             </nav>
         </div>
