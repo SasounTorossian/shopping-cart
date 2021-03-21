@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Switch, Route, useLocation } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 import Header from "./components/Header/Header"
@@ -12,10 +12,18 @@ import inventory from "./components/inventory"
 
 // Main App container that renders all components
 function App() {
-  const [basket, setBasket] = useState([])
+  // Retrieve saved basket from local storage and use it to set basket if it exists.
+  const savedBasket = JSON.parse(localStorage.getItem('basket'))
+  const [basket, setBasket] = useState(savedBasket || [])
+  
+  // Get previous page when on /search page to render underneath.
   const location = useLocation()
-
   const previous = location.state && location.state.previous
+
+  // Update local storage everytime the basket is changed.
+  useEffect(() => {
+    localStorage.setItem('basket', JSON.stringify(basket))
+  }, [basket])
   
   /*  Handles adding items to basket based on quantity. 
    *  Will create new object if item doesn't exist,
