@@ -38,17 +38,19 @@ function App() {
     } 
   }
 
-  /** Handles deletion of basket item and places it back into stock.
-   * 
-   */
+  // Handles deletion of basket item and places it back into stock.
   const deleteBasket = (itemQ) => {
     setBasket(basket.filter(basketItem => basketItem.item.id !== itemQ.item.id))
     inventory.find(inventoryItem => inventoryItem.id === itemQ.item.id).stock += itemQ.quantity
   }
 
-  //TODO: Move styling into css file
+  // Remove overflow scroll bar when not on homepage in order to prevent double scrollsbars.
+  const appOveflowControl = () => {
+    return location.pathname === "/" ? "appScroll" : "appHidden"
+  }
+
   return (
-    <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
+    <div className={`App ${appOveflowControl()}`}>
         <Header basket={basket} />
         <AnimatePresence >
           <Switch location={previous || location}>

@@ -26,5 +26,12 @@ body {
     flex-direction: column;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-    /* overflow-y: scroll; */
+}
+
+.appScroll {
+    overflow-y: scroll;
+}
+
+.appHidden {
+    overflow-y: hidden;
 }
