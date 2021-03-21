@@ -72,7 +72,7 @@
 
 .basket-item-delete {
     background: black;
-    padding: 5px 15px;
+    padding: 15px;
     margin: 0 50px;
     transition: 0.2s ease-out;
     cursor: pointer;
