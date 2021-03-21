@@ -13,18 +13,22 @@ const PageTransition = {
     }
 }
 
+// Component that implements the search bar as a modal.
 const SearchModal = ({ position }) => {
     const history = useHistory()
     const [search, setSearch] = useState("")
     const [wrapperShade, setWrapperShade] = useState("dark")
 
+    // Close modal and return to previous page when clicking on outside region.
     const closeModal = (e) => {
         e.stopPropagation();
         history.goBack();
     }
 
+    // Handle searach input.
     const handleSearch = (e) => { setSearch(e.target.value) }
 
+    // Filter inventory items based on search input.
     const filteredItems = inventory.filter((item) => {
         const itemLowerCase = item.name.toLowerCase()
         const searchLowerCase = search.toLocaleLowerCase()
@@ -32,6 +36,7 @@ const SearchModal = ({ position }) => {
         else { return null }
     });
 
+    // Make modal slightly darker when in exit-click region.
     const modalWrapperShade = () => {
         return wrapperShade === "light" ? "modal-search-wrapper-light" : "modal-search-wrapper-dark"
     }
