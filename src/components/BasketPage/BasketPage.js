@@ -1,7 +1,17 @@
 import './BasketPage.css';
 import React from 'react'
+import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
+const PageVariants = {
+    in: {
+        opacity: 1
+    },
+    out: {
+        opacity: 0 
+    }
+}
 
 // basket component that gives overview to user of current basket contents.
 const BasketPage = ({ basket, deleteBasket }) => {
@@ -10,12 +20,18 @@ const BasketPage = ({ basket, deleteBasket }) => {
 
     // Use conditional rendering to render either invalid or valid basket based on basket condition.
     return (
-        <div className="BasketPage">
+        <motion.div 
+            className="BasketPage"
+            variants={PageVariants}
+            initial="out"
+            animate="in"
+            exit="out"
+        >
             {isBasketEmpty()
             ? <InvalidBasket />
             : <ValidBasket basket={basket} deleteBasket={deleteBasket}/> 
             }
-        </div>
+        </motion.div>
     )
 }
 

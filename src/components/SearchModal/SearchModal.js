@@ -1,7 +1,17 @@
 import "./SearchModal.css"
 import React, { useState } from 'react';
 import { useHistory, Link  } from 'react-router-dom';
+import { motion } from "framer-motion"
 import inventory from "../inventory"
+
+const PageTransition = {
+    in: {
+        opacity: 1
+    },
+    out: {
+        opacity: 0 
+    }
+}
 
 const SearchModal = ({ position }) => {
     const history = useHistory()
@@ -19,6 +29,7 @@ const SearchModal = ({ position }) => {
         const itemLowerCase = item.name.toLowerCase()
         const searchLowerCase = search.toLocaleLowerCase()
         if (itemLowerCase.includes(searchLowerCase) && searchLowerCase) { return item }
+        else { return null }
     });
 
     const modalWrapperShade = () => {
@@ -26,7 +37,14 @@ const SearchModal = ({ position }) => {
     }
 
     return (
-        <div className={`modal-search-wrapper ${modalWrapperShade()}`} onClick={closeModal}>
+        <motion.div 
+            className={`modal-search-wrapper ${modalWrapperShade()}`} 
+            onClick={closeModal}
+            variants={PageTransition}
+            initial="out"
+            animate="in"
+            exit="out"
+        >
             <div 
                 className="modal-search-inner" 
                 style={{ right: position }}
@@ -61,7 +79,7 @@ const SearchModal = ({ position }) => {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

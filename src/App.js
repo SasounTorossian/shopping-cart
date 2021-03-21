@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
 import { Switch, Route, useLocation } from "react-router-dom"
+import { AnimatePresence } from "framer-motion"
 import Header from "./components/Header/Header"
 import HomePage from "./components/HomePage/HomePage"
 import ShoppingPage from "./components/ShoppingPage/ShoppingPage"
@@ -49,22 +50,24 @@ function App() {
   return (
     <div className="App" style={{ overflowY: location.pathname === "/" ? "scroll" : "hidden"}}>
         <Header basket={basket} />
-        <Switch location={previous || location}>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/shoppingpage/:collection" component={ShoppingPage} />
-          <Route 
-            exact path="/shoppingpage/:collection/:id" 
-            render={(props) => (
-              <ItemPage {...props} onAddBasket={handleAddBasket} />
-            )}
-          />
-          <Route 
-            exact path="/basket" 
-            render={(props) => (
-              <BasketPage {...props} basket={basket} deleteBasket={deleteBasket}/>
+        <AnimatePresence >
+          <Switch location={previous || location}>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/shoppingpage/:collection" component={ShoppingPage} />
+            <Route 
+              exact path="/shoppingpage/:collection/:id" 
+              render={(props) => (
+                <ItemPage {...props} onAddBasket={handleAddBasket} />
               )}
-              />
-        </Switch>
+            />
+            <Route 
+              exact path="/basket" 
+              render={(props) => (
+                <BasketPage {...props} basket={basket} deleteBasket={deleteBasket}/>
+                )}
+                />
+          </Switch>
+        </AnimatePresence>
         {previous &&           
           <Route 
               exact path="/search" 

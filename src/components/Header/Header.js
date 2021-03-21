@@ -17,7 +17,7 @@ const Header = ({ basket }) => {
     useEffect(() => {
         const element = searchInput.current
         if(element) setRightBorderDistance(window.innerWidth - element.getBoundingClientRect().right)  
-    })
+    }, [])
 
     
     // if(el) { elDistanceToRight =  }

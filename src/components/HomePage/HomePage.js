@@ -2,11 +2,27 @@ import "./HomePage.css"
 import React from 'react'
 import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+
+const PageVariants = {
+    in: {
+        opacity: 1
+    },
+    out: {
+        opacity: 0 
+    }
+}
 
 // Homepage component that gives introduction to website.
 const HomePage = () => {
     return (
-        <div className="HomePage">
+        <motion.div 
+            className="HomePage" 
+            variants={PageVariants}
+            initial="out"
+            animate="in"
+            exit="out"
+        >
             <section className="page FirstPage">
                 <div className="text-container">
                     <div className="header-container">
@@ -84,7 +100,7 @@ const HomePage = () => {
                 </div>
             </section>
             <Footer />
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,6 +1,16 @@
 import "./ItemPage.css"
 import React, { useState } from 'react'
+import { motion } from "framer-motion"
 import inventory from "../inventory"
+
+const PageVariants = {
+    in: {
+        opacity: 1
+    },
+    out: {
+        opacity: 0 
+    }
+}
 
 // Item page component that displays individual item to user.
 const ItemPage = ({onAddBasket, match: {params}}) => {
@@ -17,10 +27,16 @@ const ItemPage = ({onAddBasket, match: {params}}) => {
     const handleAddBasket = (item, quantity) => { onAddBasket(item, quantity) } 
 
     return (
-        <div className="ItemPage">
+        <motion.div 
+            className="ItemPage"
+            variants={PageVariants}
+            initial="out"
+            animate="in"
+            exit="out"
+        >
             <ProductDisplay item={item} />
             <BuyBar item={item} collection={collection} onAddBasket={handleAddBasket}/>
-        </div>
+        </motion.div>
     )
 }
 

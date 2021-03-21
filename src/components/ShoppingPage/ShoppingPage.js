@@ -1,7 +1,17 @@
 import "./ShoppingPage.css"
 import React from 'react'
 import { useParams, Link, NavLink } from 'react-router-dom'
+import { motion } from "framer-motion"
 import inventory from "../inventory"
+
+const PageVariants = {
+    in: {
+        opacity: 1
+    },
+    out: {
+        opacity: 0 
+    }
+}
 
 // Shopping page component which renders all the items on sale.
 const ShoppingPage = () => {
@@ -9,10 +19,16 @@ const ShoppingPage = () => {
     const { collection } = useParams()    
 
     return (
-        <div className="ShoppingPage">
+        <motion.div 
+            className="ShoppingPage"
+            variants={PageVariants}
+            initial="out"
+            animate="in"
+            exit="out"
+        >
             <SideBar collection={collection} />
             <ProductList collection={collection}/>
-        </div>
+        </motion.div>
     )
 }
 
