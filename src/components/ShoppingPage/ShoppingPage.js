@@ -61,6 +61,13 @@ const SideBar = ({ collection }) => {
                 >
                     <p className="side-bar-text side-bar-text-gold">Gold Collection</p>
                 </NavLink>
+                <NavLink 
+                    to="/shoppingpage/green" 
+                    className="side-bar-link"
+                    activeClassName="side-bar-link-green-active"
+                >
+                    <p className="side-bar-text side-bar-text-green">Green Collection</p>
+                </NavLink>
             </div>
         </nav>
     )

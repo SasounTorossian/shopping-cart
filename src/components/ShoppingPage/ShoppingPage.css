@@ -33,6 +33,10 @@
     background-color: var(--colour-gold);
 }
 
+.side-bar-green-active {
+    background-color: var(--colour-green);
+}
+
 .side-bar h3 {  
     width: 100%;
     margin-top: 30px;
@@ -44,7 +48,7 @@
 }
 
 .side-bar .side-bar-link-container {
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -81,6 +85,12 @@
 
 .side-bar .side-bar-link-gold-active p{
     background-color: var(--colour-gold);
+    transform: scale(1.1);
+    color: black;
+}   
+
+.side-bar .side-bar-link-green-active p{
+    background-color: var(--colour-green);
     transform: scale(1.1);
     color: black;
 }   

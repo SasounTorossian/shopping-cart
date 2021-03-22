@@ -2,9 +2,10 @@
     font-family: -apple-system, 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    --colour-red: rgba(168, 14, 14, 1);
-    --colour-grey: rgba(129, 123, 123, 1);
-    --colour-gold: rgba(199, 139, 11, 1);
+    --colour-red: rgb(168, 14, 14);
+    --colour-grey: rgb(161, 161, 161);
+    --colour-gold: rgb(199, 139, 11);
+    --colour-green: rgb(45, 126, 55);
 }
 
 html, body {
