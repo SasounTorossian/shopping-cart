@@ -149,7 +149,7 @@
 }
 
 .product-list .item .item-padding-container:hover img{
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 .product-list .item .item-name {

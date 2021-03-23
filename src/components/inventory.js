@@ -1,8 +1,8 @@
-import image_1 from "../images/1.jpg" 
-import image_2 from "../images/2.jpg" 
-import image_3 from "../images/3.jpg" 
-import image_4 from "../images/4.jpg" 
-import image_5 from "../images/5.jpg"
+import TowerOfBabel from "../images/inventory/TowerOfBabel.JPG" 
+import Judgement from "../images/inventory/Judgement.JPG" 
+import RightWayUp from "../images/inventory/RightWayUp.JPG" 
+import SpilledMilk from "../images/inventory/SpilledMilk.JPG" 
+import Squeezed from "../images/inventory/Squeezed.JPG" 
 
 import TheSimp from "../images/inventory/TheSimp.JPG" 
 import Confusion from "../images/inventory/Confusion.JPG" 
@@ -25,50 +25,57 @@ const inventory = [
     // RED
     {
         collection: "red",
-        image: image_1,
-        name: "cat", 
-        descShort: "Meow meow",
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,
-        price: 20,     
-        stock: 2
-    },
-    {
-        collection: "red",
-        image: image_2,
-        name: "cow", 
-        descShort: "Moo moo",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 30,     
+        image: TowerOfBabel,
+        name: "Tower of Babel", 
+        desc: `In their hubris, humanity constructed the tower of babel to reach the heavens. In their endeavour,
+                their speech was confounded, birthing the many languages we know today. This piece of metallic art
+                commemorates the arrogance of man in machine form as it attempts to reach the domain of God through 
+                nothing by Toyota and Peugeot brake discs, and a lot of rust.`,
+        price: 2000,     
         stock: 1
     },
     {
         collection: "red",
-        image: image_3,
-        name: "dog", 
-        descShort: "bark bark",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 40,     
-        stock: 4
+        image: Judgement,
+        name: "Judgement", 
+        desc: `As the propane tank glares down on mere mortals, this cylinder of thick steel contains propane, 
+                the lifeblood gas of the modern industrial era. Here, the container of this precious gas looks
+                down upon humanity that attempt to contain its immense pressure, and judges them with an eyeless gaze.
+                Two of these magnificent cylinders are being sold by The Collection, collect only.`,
+        price: 600,     
+        stock: 2
     },
     {
         collection: "red",
-        image: image_4,
-        name: "flamingo", 
-        descShort: "? ?",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 40,     
-        stock: 1 
+        image: RightWayUp,
+        name: "Right Way Up", 
+        desc: `Civilization would simply not fucntion without the forms of direction that we take for granted in the modern era.
+                Our industries and sciences would cease to exists if up and down were not universally understood concepts. 
+                But what if, in an act of infinite defiance, an object which only makes sense when the right way up, was turned 
+                upside down. This is what The Collection's Right Way Up art piece attempts to ask the individual.`,        
+        price: 200,     
+        stock: 1
     },
     {
         collection: "red",
-        image: image_5,
-        name: "whale", 
-        descShort: "AAAAAAAAAA",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 40,     
+        image: SpilledMilk,
+        name: "Spilled Milk", 
+        desc: `There's no use crying over spilt milk, and certainly no use in trying to clean it up. This art piece is actually just made
+                up of nails found in The Collection's headquarters that were knocked over recently by an irresponsible intern who has since 
+                been fired. Averse to any kind of physical labour, we have no intention of cleaning it up, hence we are selling each nail at
+                cost of £10, to be collected only.`,        
+        price: 10,     
+        stock: 173 
+    },
+    {
+        collection: "red",
+        image: Squeezed,
+        name: "Squeezed", 
+        desc: `The pressures of industrialization spare no one, and it is the weakest that are the first to be crushed under the relentless
+                march of modernization. If this exhibit a diesel fuel filter acts as a stand in for the average man, who is being squeezed
+                by the many externalities surrounding them. The Collection is happy to part with this subtle representation of societal pressure,
+                on the condition that the buyer collects the item, as it smells of diesel and we would rather not handle it.`,        
+        price: 700,     
         stock: 1 
     },
     // GREY
@@ -76,36 +83,43 @@ const inventory = [
         collection: "grey",
         image: TheSimp,
         name: "The Simp", 
-        descShort: "Scuttle scuttle",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 50,     
-        stock: 3  
+        desc: `A simp has no face, no features, nothing to define them from the masses of men leading lives of quiet desperation.
+                In this exhibit, The Simp represents the core structure of all those who's loneliness washes over their empty
+                expressions, as they await for the reply text that will never come, from a Queen that will not reciprocate their love.`,        
+        price: 1500,     
+        stock: 1  
     },
     {
         collection: "grey",
         image: Confusion,
         name: "Confusion", 
-        descShort: "Scuttle scuttle",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 50,     
-        stock: 3  
+        desc: `Wait, what? What is this drawing? what does it MEAN? How was it drawn? Who is it for? Where does it belong? Why are there
+                just four arrows? When will this line of needless questioning start to lose its momentum? Perhaps now? Or maybe now? 
+                These are the questions that have plagued our staff since we first took in this drawing, and the Collection is sick and tired of it.
+                We are offering this drawing at a low price to anyone that can get it out of our sight.`,        
+        price: 1,     
+        stock: 1  
     },
     {
         collection: "grey",
         image: Perspective,
         name: "Perspective", 
-        descShort: "Scuttle scuttle",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 50,     
-        stock: 3  
+        desc: `The houses go further and further into the distance never ending, never stopping, even when they reach base of the mountain.
+                How big are those mountains? We don't know, for regardless of what your girlfriend told you 3 years ago before she left you 
+                for that ukulele player, size does matter. The Collection is selling off this brilliant piece of art, which forces us to reckon
+                with reality that size may be a subjective phenomenon base on perspective.`,        
+        price: 1000,     
+        stock: 1  
     },
     {
         collection: "grey",
         image: Sadness,
         name: "Sadness", 
-        descShort: "Scuttle scuttle",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
-        price: 50,     
+        desc: `This drawing screams out for help under the black sun of day. Its cries are never heard, and its infinite anguish is never felt,
+                simply for the cruel reason that it is smiling. When does the link between physical expression and inner emotions break down, 
+                so that a smile may hide one's inner torment. The Collection has no idea, which is why we're selling off this drawing since
+                it's creeping out some of the new interns. There are 3, which we will gladly deliver to you with a smile on our faces.`,        
+        price: 650,     
         stock: 3  
     },
     // GOLD
@@ -113,8 +127,10 @@ const inventory = [
         collection: "gold",
         image: FingerBrothers,
         name: "FingerBrothers", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,        
         price: 10,     
         stock: 1
     },
@@ -122,8 +138,10 @@ const inventory = [
         collection: "gold",
         image: TheShadow,
         name: "The Shadow", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,        
         price: 10,     
         stock: 1
     },
@@ -131,8 +149,10 @@ const inventory = [
         collection: "gold",
         image: HardAndSoft,
         name: "Hard And Soft", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,        
         price: 10,     
         stock: 1
     },
@@ -140,8 +160,10 @@ const inventory = [
         collection: "gold",
         image: Duck,
         name: "Duck", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,        
         price: 10,     
         stock: 1
     },
@@ -149,8 +171,10 @@ const inventory = [
         collection: "gold",
         image: NotHomer,
         name: "Not Homer", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,        
         price: 10,     
         stock: 1
     },
@@ -159,8 +183,10 @@ const inventory = [
         collection: "green",
         image: Armoured,
         name: "Armoured", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,                
         price: 10,     
         stock: 1
     },
@@ -168,8 +194,10 @@ const inventory = [
         collection: "green",
         image: Family,
         name: "Family", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,                
         price: 10,     
         stock: 1
     },
@@ -177,8 +205,10 @@ const inventory = [
         collection: "green",
         image: Sweater,
         name: "Sweater", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,                
         price: 10,     
         stock: 1
     },
@@ -186,8 +216,10 @@ const inventory = [
         collection: "green",
         image: TheSiblings,
         name: "TheSiblings", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,                
         price: 10,     
         stock: 1
     },
@@ -195,8 +227,10 @@ const inventory = [
         collection: "green",
         image: TouchingTheSky,
         name: "Touching The Sky", 
-        descShort: "Quack quack",
-        desc: "Nisi nulla minim et reprehenderit qui irure cillum aute laborum. Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. Mollit fugiat qui veniam non voluptate do. Etm quis voluptate. Qui excepteur elit sint aliquip exercitation nisi veniam Lorem laborum esse excepteur consequat et esse.",
+        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
+                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
+                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
+                Mollit fugiat qui veniam non voluptate do.`,                
         price: 10,     
         stock: 1
     },
