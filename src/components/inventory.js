@@ -19,7 +19,7 @@ import Armoured from "../images/inventory/Armoured.JPG"
 import Sweater from "../images/inventory/Sweater.JPG"
 import Family from "../images/inventory/Family.JPG"
 import TheSiblings from "../images/inventory/TheSiblings.JPG"
-import TouchingTheSky from "../images/inventory/TouchingTheSky.JPG"
+import Stubborn from "../images/inventory/Stubborn.JPG"
 
 const inventory = [
     // RED
@@ -38,10 +38,9 @@ const inventory = [
         collection: "red",
         image: Judgement,
         name: "Judgement", 
-        desc: `As the propane tank glares down on mere mortals, this cylinder of thick steel contains propane, 
-                the lifeblood gas of the modern industrial era. Here, the container of this precious gas looks
-                down upon humanity that attempt to contain its immense pressure, and judges them with an eyeless gaze.
-                Two of these magnificent cylinders are being sold by The Collection, collect only.`,
+        desc: `Here, this majestic container of propane looks down upon humanity that attempt to contain its immense pressure, 
+                and judges them with an eyeless gaze. Two of these magnificent cylinders are being sold by The Collection, collect only.
+                The Propane tanks do not come with propane accessories.`,
         price: 600,     
         stock: 2
     },
@@ -49,7 +48,7 @@ const inventory = [
         collection: "red",
         image: RightWayUp,
         name: "Right Way Up", 
-        desc: `Civilization would simply not fucntion without the forms of direction that we take for granted in the modern era.
+        desc: `Civilization would simply not function without the forms of direction that we take for granted in the modern era.
                 Our industries and sciences would cease to exists if up and down were not universally understood concepts. 
                 But what if, in an act of infinite defiance, an object which only makes sense when the right way up, was turned 
                 upside down. This is what The Collection's Right Way Up art piece attempts to ask the individual.`,        
@@ -104,10 +103,10 @@ const inventory = [
         collection: "grey",
         image: Perspective,
         name: "Perspective", 
-        desc: `The houses go further and further into the distance never ending, never stopping, even when they reach base of the mountain.
+        desc: `The houses go further and further into the distance never ending, never stopping, even when they reach the base of the mountain.
                 How big are those mountains? We don't know, for regardless of what your girlfriend told you 3 years ago before she left you 
                 for that ukulele player, size does matter. The Collection is selling off this brilliant piece of art, which forces us to reckon
-                with reality that size may be a subjective phenomenon base on perspective.`,        
+                with the reality that size may be a subjective phenomenon base on perspective.`,        
         price: 1000,     
         stock: 1  
     },
@@ -126,56 +125,50 @@ const inventory = [
     {
         collection: "gold",
         image: FingerBrothers,
-        name: "FingerBrothers", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,        
-        price: 10,     
+        name: "The Brothers Dexterous", 
+        desc: `What are fingers, if not ornaments with which one manipulates the world around them. With The Brothers Dexterous, this question
+                is fearlessly asked for anyone willing to answer it. The little brother is to be used, while the big brother is a user. 
+                This inevitably leads to tension between the two, which is why The Collection recommends buyers to keep them separate.`,        
+        price: 2000,     
         stock: 1
     },
     {
         collection: "gold",
         image: TheShadow,
         name: "The Shadow", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,        
-        price: 10,     
+        desc: `The item is not the doll itself, but rather, the shadow it casts. This exhibit seeks to interrogate the artistic beauty of the
+                evil found within all humans, by having a relatively modest figure cast an ominous shadow. The Collection reccomends buyers
+                also purchase a lamp to illuminate the The Shadow with.`,        
+        price: 4000,     
         stock: 1
     },
     {
         collection: "gold",
         image: HardAndSoft,
-        name: "Hard And Soft", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,        
-        price: 10,     
+        name: "Hard and Soft", 
+        desc: `What happens when an incredibly light objects is glued to an incredibly hard surface? The answer is The Collection's Hard and Soft
+                exhibit. Made using the feathers from a now extincy species of South American bird (We killed the last one to get it), and the 
+                hollowed horn of another extinct African cattle (We also killed the last one), this exhibit demonstrates that the opposing forces of 
+                hard and soft continue even after death. Animals were harmed in the making of this exhibit`,        
+        price: 6000,     
         stock: 1
     },
     {
         collection: "gold",
         image: Duck,
         name: "Duck", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,        
-        price: 10,     
+        desc: `It's a duck`,        
+        price: 9999,     
         stock: 1
     },
     {
         collection: "gold",
         image: NotHomer,
         name: "Not Homer", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,        
-        price: 10,     
+        desc: `This is not Homer Simpson from the critically acclaimed 1990s sitcom, The Simpsons. The Collection will not tolerate any reference
+                to any trademarked character of any copyrighted piece of media. The Collection reserves all rights to refuse questioning regarding
+                the origins of this exhibit, and all questions will be forwarded to our legal team for further scrutiny and rebuttal.`,        
+        price: 25000,     
         stock: 1
     },
     //GREEN
@@ -183,56 +176,49 @@ const inventory = [
         collection: "green",
         image: Armoured,
         name: "Armoured", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,                
-        price: 10,     
+        desc: `When one is as small as an average aloe vera plant, the only real defense against the cruelty of the world is to hide behind a
+                strong suit of armour. The Collection is selling off this incredible piece of biological artwork to anyone willing to put up
+                with an emotionally distant plant.`,                
+        price: 1000,     
         stock: 1
     },
     {
         collection: "green",
         image: Family,
         name: "Family", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,                
-        price: 10,     
+        desc: `When a tight bond is made between family members, it can be difficult to separate them. Not only that, but their roots are all
+                one and the same, as seen through the transparent glass. The Collection is willing to sell this exhibit to anyone who doesn't 
+                mind being adopted by these plants.`,                
+        price: 1800,     
         stock: 1
     },
     {
         collection: "green",
         image: Sweater,
         name: "Sweater", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,                
-        price: 10,     
+        desc: `Even plants get cold. Sweater reminds us of this fact by keeping the plant it is attached to nice and warm regardless of how 
+                low the temperature outside will drop. Please note that Sweater is actually the fabric surrounding the plant, not the plant
+                itself. The Collection does not guarantee that the plant will come with Sweater.`,                
+        price: 1500,     
         stock: 1
     },
     {
         collection: "green",
         image: TheSiblings,
-        name: "TheSiblings", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,                
-        price: 10,     
-        stock: 1
+        name: "The Siblings", 
+        desc: `They hate each other. Ever since they were children, Ernest and Edward would always make fun of Harry for his name that didn't 
+                begin with "E". However, Ernest and Edward secretly hate each other too, since they have different names. The Collection is sick
+                of dealing with these little brats and is selling them off individually to separate buyers.`,                
+        price: 700,     
+        stock: 3
     },
     {
         collection: "green",
-        image: TouchingTheSky,
-        name: "Touching The Sky", 
-        desc: `Nisi nulla minim et reprehenderit qui irure cillum aute laborum. 
-                Eiusmod mollit ullamco sit culpa sint reprehenderit est esse officia laborum mollit sunt. 
-                Excepteur ullamco et anim nulla consequat magna laboris sint incididunt. Aute. 
-                Mollit fugiat qui veniam non voluptate do.`,                
+        image: Stubborn,
+        name: "Stubborn", 
+        desc: `We've tried to sell this one off, but it's just too stubborn. It refuses to allow us to increase its stock count above 0.`,                
         price: 10,     
-        stock: 1
+        stock: 0
     },
 ]
 
