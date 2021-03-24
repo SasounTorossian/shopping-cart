@@ -75,7 +75,7 @@
 }
 
 .SecondPage {
-    background: url("../../images/cal.jpg") no-repeat center center/cover;
+    background: url("../../images/art.jpg") no-repeat center center/cover;
     position: relative;
 }
 
@@ -110,4 +110,23 @@
 
 .ThirdPage .text-container .home-link h3{
     background: var(--colour-gold);
+}
+
+.FourthPage {
+    background: url("../../images/trees.jpg") no-repeat center center/cover;
+    position: relative;
+}
+
+.FourthPage .text-container .header-container span{
+    color: var(--colour-green);
+}
+
+.FourthPage .text-container {
+    right: 10%;
+    background: #111;
+    color: #eee;
+}
+
+.FourthPage .text-container .home-link h3{
+    background: var(--colour-green);
 }

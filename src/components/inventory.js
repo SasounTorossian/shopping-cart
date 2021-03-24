@@ -217,7 +217,7 @@ const inventory = [
         image: Stubborn,
         name: "Stubborn", 
         desc: `We've tried to sell this one off, but it's just too stubborn. It refuses to allow us to increase its stock count above 0.`,                
-        price: 10,     
+        price: 900,     
         stock: 0
     },
 ]
