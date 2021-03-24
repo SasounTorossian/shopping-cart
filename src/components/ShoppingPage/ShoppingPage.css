@@ -105,9 +105,9 @@
     overflow-y: scroll;
 }
 
-.product-list > :last-child {
+/* .product-list > :last-child {
     margin-bottom: 3%;
-}
+} */
 
 .product-list .item {
     width: 50%;
