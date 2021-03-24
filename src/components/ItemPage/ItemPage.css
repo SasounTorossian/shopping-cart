@@ -163,3 +163,7 @@
 .buy-bar-button-gold:hover {
     background: var(--colour-gold);
 }
+
+.buy-bar-button-green:hover {
+    background: var(--colour-green);
+}
