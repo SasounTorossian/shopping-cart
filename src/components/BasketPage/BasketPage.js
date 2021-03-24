@@ -49,7 +49,7 @@ const ValidBasket = ({ basket, deleteBasket }) => {
     return (
         <React.Fragment>
             <BasketItems basket={basket} deleteBasket={deleteBasket}/>
-            <BasketCheckout />
+            <BasketCheckout basket={basket}/>
         </React.Fragment>
     )
 }
@@ -69,7 +69,10 @@ const BasketItems = ({ basket, deleteBasket }) => {
                                 {basketItem.item.name}
                             </div>
                             <div className="basket-item-quantity">
-                                {basketItem.quantity}
+                                Quantity: {basketItem.quantity}
+                            </div>
+                            <div className="basket-item-total">
+                                Total: £{basketItem.quantity * basketItem.item.price}
                             </div>
                         </div>
                         <div className="basket-item-delete" onClick={() => deleteBasket(basketItem)}>
@@ -83,9 +86,16 @@ const BasketItems = ({ basket, deleteBasket }) => {
 }
 
 // Component for rendering the checkout button at the end of the item list.
-const BasketCheckout = () => {
+const BasketCheckout = ({ basket }) => {
+
+    // Calculates total cost of basket
+    const basketCost = basket.reduce((a, b) => a + (b.quantity * b.item.price), 0);
+
     return (
         <div className="basket-checkout">
+            <div className="basket-checkout-total">
+                Final Total: £{basketCost}
+            </div>
             <a 
                 href="https://github.com/SasounTorossian" 
                 target="_blank" 
