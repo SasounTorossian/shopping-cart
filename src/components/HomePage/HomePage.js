@@ -31,7 +31,7 @@ const HomePage = () => {
                     <p>
                         This collection compiles the twisted creations of modern
                         man into a cacophany of steel, iron, rust, and wire, which 
-                        serve as a homage to mankind's industrial prowess
+                        serve as a homage to mankind's industrial prowess.
                     </p>
                     <Link to="/shoppingpage/red" className="home-link">
                         <h3>Shop The Red Collection</h3>

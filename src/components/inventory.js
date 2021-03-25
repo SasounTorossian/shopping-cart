@@ -27,7 +27,7 @@ const inventory = [
         collection: "red",
         image: TowerOfBabel,
         name: "Tower of Babel", 
-        desc: `In their hubris, humanity constructed the tower of babel to reach the heavens. In their endeavour,
+        desc: `In their hubris, humanity constructed the Tower of Babel to reach the heavens. In their endeavour,
                 their speech was confounded, birthing the many languages we know today. This piece of metallic art
                 commemorates the arrogance of man in machine form as it attempts to reach the domain of God through 
                 nothing by Toyota and Peugeot brake discs, and a lot of rust.`,
@@ -71,7 +71,7 @@ const inventory = [
         image: Squeezed,
         name: "Squeezed", 
         desc: `The pressures of industrialization spare no one, and it is the weakest that are the first to be crushed under the relentless
-                march of modernization. If this exhibit a diesel fuel filter acts as a stand in for the average man, who is being squeezed
+                march of modernization. In this exhibit a diesel fuel filter acts as a stand in for the average man, who is being squeezed
                 by the many externalities surrounding them. The Collection is happy to part with this subtle representation of societal pressure,
                 on the condition that the buyer collects the item, as it smells of diesel and we would rather not handle it.`,        
         price: 700,     
@@ -114,7 +114,7 @@ const inventory = [
         collection: "grey",
         image: Sadness,
         name: "Sadness", 
-        desc: `This drawing screams out for help under the black sun of day. Its cries are never heard, and its infinite anguish is never felt,
+        desc: `This drawing screams out for help under the black sun of day. Its cries are never heard and its infinite anguish is never felt,
                 simply for the cruel reason that it is smiling. When does the link between physical expression and inner emotions break down, 
                 so that a smile may hide one's inner torment. The Collection has no idea, which is why we're selling off this drawing since
                 it's creeping out some of the new interns. There are 3, which we will gladly deliver to you with a smile on our faces.`,        
@@ -146,10 +146,10 @@ const inventory = [
         collection: "gold",
         image: HardAndSoft,
         name: "Hard and Soft", 
-        desc: `What happens when an incredibly light objects is glued to an incredibly hard surface? The answer is The Collection's Hard and Soft
-                exhibit. Made using the feathers from a now extincy species of South American bird (We killed the last one to get it), and the 
+        desc: `What happens when an incredibly light object is glued to an incredibly hard surface? The answer is The Collection's Hard and Soft
+                exhibit. Made using the feathers from a now extinct species of South American bird (We killed the last one to get it), and the 
                 hollowed horn of another extinct African cattle (We also killed the last one), this exhibit demonstrates that the opposing forces of 
-                hard and soft continue even after death. Animals were harmed in the making of this exhibit`,        
+                hard and soft continue even after death. Animals were harmed in the making of this exhibit.`,        
         price: 6000,     
         stock: 1
     },
@@ -206,9 +206,9 @@ const inventory = [
         collection: "green",
         image: TheSiblings,
         name: "The Siblings", 
-        desc: `They hate each other. Ever since they were children, Ernest and Edward would always make fun of Harry for his name that didn't 
+        desc: `They hate each other. Ever since they were children, Ernest and Edward would always make fun of Harry for his name that did not 
                 begin with "E". However, Ernest and Edward secretly hate each other too, since they have different names. The Collection is sick
-                of dealing with these little brats and is selling them off individually to separate buyers.`,                
+                of dealing with these little bastards and is selling them off individually to separate buyers.`,                
         price: 700,     
         stock: 3
     },
@@ -216,8 +216,10 @@ const inventory = [
         collection: "green",
         image: Stubborn,
         name: "Stubborn", 
-        desc: `We've tried to sell this one off, but it's just too stubborn. It refuses to allow us to increase its stock count above 0.`,                
+        desc: `We've tried to sell this one off, but it's just too stubborn. It refuses to allow us to increase its stock count above 0 in the 
+                inventory.js file.`,                
         price: 900,     
+        // !!! DO NOT CHANGE UNDER ANY CIRUMSTANCE !!!
         stock: 0
     },
 ]
