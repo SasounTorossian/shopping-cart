@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.917369d1.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.2f36cbea.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.2f36cbea.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.b6a2e420.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b6a2e420.js.map",
+    "static/js/2.1438ca42.chunk.js": "/shopping-cart/static/js/2.1438ca42.chunk.js",
+    "static/js/2.1438ca42.chunk.js.map": "/shopping-cart/static/js/2.1438ca42.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.917369d1.chunk.css.map": "/shopping-cart/static/css/main.917369d1.chunk.css.map",
+    "static/js/2.1438ca42.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.1438ca42.chunk.js.LICENSE.txt",
+    "static/media/Armoured.be737eae.JPG": "/shopping-cart/static/media/Armoured.be737eae.JPG",
+    "static/media/Confusion.0310c97d.JPG": "/shopping-cart/static/media/Confusion.0310c97d.JPG",
+    "static/media/Duck.5e2f5235.JPG": "/shopping-cart/static/media/Duck.5e2f5235.JPG",
+    "static/media/Family.f8b037c8.JPG": "/shopping-cart/static/media/Family.f8b037c8.JPG",
+    "static/media/FingerBrothers.4a99da87.JPG": "/shopping-cart/static/media/FingerBrothers.4a99da87.JPG",
+    "static/media/HardAndSoft.e6a7f23d.JPG": "/shopping-cart/static/media/HardAndSoft.e6a7f23d.JPG",
+    "static/media/Judgement.957686b1.JPG": "/shopping-cart/static/media/Judgement.957686b1.JPG",
+    "static/media/NotHomer.9fbed01b.JPG": "/shopping-cart/static/media/NotHomer.9fbed01b.JPG",
+    "static/media/Perspective.42d84166.JPG": "/shopping-cart/static/media/Perspective.42d84166.JPG",
+    "static/media/RightWayUp.73179e15.JPG": "/shopping-cart/static/media/RightWayUp.73179e15.JPG",
+    "static/media/Sadness.6888184c.JPG": "/shopping-cart/static/media/Sadness.6888184c.JPG",
+    "static/media/SpilledMilk.be288a79.JPG": "/shopping-cart/static/media/SpilledMilk.be288a79.JPG",
+    "static/media/Squeezed.db01e862.JPG": "/shopping-cart/static/media/Squeezed.db01e862.JPG",
+    "static/media/Stubborn.5a8ab4e2.JPG": "/shopping-cart/static/media/Stubborn.5a8ab4e2.JPG",
+    "static/media/Sweater.e8fb3853.JPG": "/shopping-cart/static/media/Sweater.e8fb3853.JPG",
+    "static/media/TheShadow.c258002c.JPG": "/shopping-cart/static/media/TheShadow.c258002c.JPG",
+    "static/media/TheSiblings.ebc4fb84.JPG": "/shopping-cart/static/media/TheSiblings.ebc4fb84.JPG",
+    "static/media/TheSimp.43e7f9ca.JPG": "/shopping-cart/static/media/TheSimp.43e7f9ca.JPG",
+    "static/media/TowerOfBabel.ccdb8d31.JPG": "/shopping-cart/static/media/TowerOfBabel.ccdb8d31.JPG",
+    "static/media/HomePage.css": "/shopping-cart/static/media/trees.35e1b118.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6a2e420.js",
+    "static/js/2.1438ca42.chunk.js",
+    "static/css/main.917369d1.chunk.css",
+    "static/js/main.2f36cbea.chunk.js"
+  ]
+}
