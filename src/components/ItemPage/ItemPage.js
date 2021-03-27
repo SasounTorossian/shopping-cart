@@ -100,7 +100,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
             <div className="buy-bar-button-container">
                 <div className="buy-bar-quantity">
                     <div 
-                        className={`buy-bar-quantity-increment noSelect ${disableDecrement()}`} 
+                        className={`buy-bar-quantity-decrement noSelect ${disableDecrement()}`} 
                         onClick={handleDecrement}
                     >
                         -
@@ -113,7 +113,7 @@ const BuyBar = ({ item, collection, onAddBasket }) => {
                     >
                     </input>
                     <div 
-                        className={`buy-bar-quantity-decrement noSelect ${disableIncrement()}`} 
+                        className={`buy-bar-quantity-increment noSelect ${disableIncrement()}`} 
                         onClick={handleIncrement}
                     >
                         +
