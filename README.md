@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# shopping-cart
+shopping cart page based off the Odin project curriculum. Users can browse various products in the catalogue and add to basket. Live demo can be found on github.io [here](https://sasountorossian.github.io/shopping-cart/). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![shopping cart demo](Memory.gif)
 
-## Available Scripts
+Main emphasis of this project was the design aspect, having become comfortable with React and react-routing-dom from the previous two projects. Made use of online wireframe tools to get the best look. Theme of the webpage is an overly pretentious, minimalist, tongue-in-cheek art exhibition which gave me an excuse to brush the dust off my DSLR camera.
 
-In the project directory, you can run:
+In a change from previous React projects, styling was mainly CSS, since I felt that it gave me much greater control over the fine details of the page, as opposed to Material-Ui which, similar to Bootsrap, can lead to all webpage looking somewhat samey (At least in the hands of an amateur). This also allowed me to experiment with sticky scroll on the home page, which is a nice touch.
 
-### `yarn start`
+Project's javascript logic was relatively straightforward, leaving plenty of time to focus on the design of the webpage. The exception to the easy javascript however was the implementation of the modal search function. This required some playing around with the routing library switching, having to pass a prop of the current location to the <Switch> element in App.js which would render the search bar, while figuring out the previous location in order to render it underneath the modal. It also required me to get the positioning of the Search tab in the header, in order to align the search input box with it.
+  
+Here, I use refs to measure the distance between the right border of the header's search button, and the right side of the screen.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Header.js
+```javascript
+  const [rightBorderDistance, setRightBorderDistance] = useState(0)
+  const searchInput = useRef(null);
+  useEffect(() => {
+      const element = searchInput.current
+      if(element) setRightBorderDistance(window.innerWidth - element.getBoundingClientRect().right)  
+  }, [])
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The NavLink element will pass the current url location in the "previous" state, as well as the rightBorderDistance in the "position" state.
 
-### `yarn test`
+### Header.js
+```javascript
+  <NavLink to={{
+      pathname: "/search",
+      state: { previous: location, position: rightBorderDistance},
+      }}
+      className="nav-bar-search nav-link"
+      activeClassName="nav-bar-active"
+      ref={searchInput}
+  >
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here, I check if there is a previous state in the location variable. If so, then render that underneath the modal, and if not just render the normal location.
 
-### `yarn build`
+### App.js
+```javascript
+  const location = useLocation()
+  const previous = location.state && location.state.previous
+  
+  <Switch location={previous || location}>
+  .......
+  </Switch>
+  
+  {previous &&           
+    <Route 
+        exact path="/search" 
+        render={(props) => (
+          <SearchModal {...props} position={location.state.position}/>
+          )}
+    />
+  }
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Upon rendering the modal, align the container with right border of the search tab.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### SearchModal.js
+```javascript
+  <div 
+      className="modal-search-inner" 
+      style={{ right: position }} // Align input with search button. 
+      onClick={(e) => e.stopPropagation()} 
+      onMouseLeave={() => setWrapperShade("dark")}
+      onMouseEnter={() => setWrapperShade("light")}
+  >
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Search demo
+![Search demo](Search.gif)
 
-### `yarn eject`
+Animations were made with framer-motion. The location manipulation that was required for the modal search page made transition-out effects difficult to implement, which is why there are only transition-in effects.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Fun project that allowed me to stretch some design muscles and have fun implementing new ideas and writing some joke descriptions. 
