@@ -74,4 +74,4 @@ Upon rendering the modal, align the container with right border of the search ta
 
 Animations were made with framer-motion. The location manipulation that was required for the modal search page made transition-out effects difficult to implement, which is why there are only transition-in effects.
 
-Fun project that allowed me to stretch some design muscles and have fun implementing new ideas such as modal pages and dom measurement manipulation. 
+Fun project that allowed me to stretch some design muscles and have fun implementing new ideas and writing some joke descriptions. 
