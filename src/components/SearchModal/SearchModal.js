@@ -58,7 +58,7 @@ const SearchModal = ({ position }) => {
                 onMouseEnter={() => setWrapperShade("light")}
             >
                 <div className="modal-search-searchbar">
-                    <input className="modal-search-input" onChange={handleSearch}/>
+                    <input className="modal-search-input" onChange={handleSearch} autoFocus/>
                     <button className="modal-search-button">
                         <svg
                             className="w-6 h-6"
